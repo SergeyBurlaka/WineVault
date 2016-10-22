@@ -1,4 +1,9 @@
 # WineVault
+My test to WoxApp.
+
+###Download
+[APK from Github] (https://github.com/SergeyBurlaka/WineVault/blob/master/app-debug.apk)  
+
 ### Screenshots
 <img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/Screenshot_2016-10-22-11-38-52.png" >
 
