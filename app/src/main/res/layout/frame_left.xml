@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
+    android:layout_width="@dimen/left_frame_width"
+    android:layout_height="match_parent"
+    android:id="@+id/linearLayout_left_frame">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/left_element_height"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:layout_marginLeft="@dimen/padding_image_left_element"
+            android:layout_marginRight="@dimen/padding_image_left_element"
+            android:id="@+id/myRectangleView"
+            android:src="@mipmap/ic_dashboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/dashboard_img" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+
+            android:textSize="@dimen/header_text_left_element"
+            android:textColor="@color/background_color_white"
+            android:text="@string/dashboard"
+            android:id="@+id/textView"
+            android:layout_alignBottom="@+id/myRectangleView"
+
+            />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

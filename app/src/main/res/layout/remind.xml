@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view_lost_w"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/card_margin"
+        android:elevation="3dp"
+        card_view:cardCornerRadius="@dimen/card_album_radius">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:background="@color/background_color_white">
+
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="9dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/size_text_main_in_list_view"
+            android:text="@string/data_in_list"
+            android:id="@+id/text_data_r"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_marginTop="17.5dp"
+            android:layout_marginLeft="3dp"
+            android:layout_width="@dimen/box_ic_size"
+            android:layout_height="@dimen/box_ic_size"
+            android:id="@+id/image_wine_r"
+            android:src="@mipmap/ic_wine_bottle"
+
+            android:contentDescription="@string/wine_in_r"
+
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_marginTop="19.5dp"
+            android:layout_marginLeft="22.5dp"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+
+            android:textSize="@dimen/header_size"
+            android:text="@string/amount_wine_r"
+            android:id="@+id/text_amount_wine_r"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/size_text_main_in_list_view"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/domaines_barons"
+            android:id="@+id/text_main_in_r"
+            android:textStyle="bold" />
+
+
+
+        <TextView
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="27dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/size_text_main_in_list_view"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/text_secondary_r"
+            android:id="@+id/secondary_text_in_r"
+            android:textStyle="italic" />
+
+
+    </RelativeLayout>
+
+
+
+    </android.support.v7.widget.CardView>
+
+    </LinearLayout>

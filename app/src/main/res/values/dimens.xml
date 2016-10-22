@@ -1,0 +1,92 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+
+
+    <dimen name="item_offset">10dp</dimen>
+    <dimen name="detail_backdrop_height">250dp</dimen>
+    <dimen name="backdrop_title">30dp</dimen>
+    <dimen name="backdrop_subtitle">18dp</dimen>
+    <dimen name="card_margin">5dp</dimen>
+    <dimen name="card_album_radius">6dp</dimen>
+    <dimen name="album_cover_height">160dp</dimen>
+    <dimen name="album_title_padding">10dp</dimen>
+    <dimen name="album_title">15dp</dimen>
+    <dimen name="songs_count_padding_bottom">5dp</dimen>
+    <dimen name="songs_count">12dp</dimen>
+    <dimen name="ic_album_overflow_width">20dp</dimen>
+    <dimen name="ic_album_overflow_height">30dp</dimen>
+    <dimen name="ic_album_overflow_margin_top">10dp</dimen>
+
+    <!-- header text for tablet-->
+    <dimen name="header_frame_height_tablet">45dp</dimen>
+
+    <dimen name="header_size_tablet">22.5dp</dimen>
+
+    <dimen name="header_indent_top_tablet">3.75dp</dimen>
+    <dimen name="header_indent_left_tablet">11.32dip</dimen>
+    <dimen name="next_header_indent_left_tablet">55.5dp</dimen>
+
+
+    <!-- dimens for tablet  -->
+
+    <!-- windows indents for tablet-->
+    <dimen name="window_indent_tablet">12.5dp</dimen>
+
+    <!-- left elements for tablet -->
+
+    <dimen name="left_element_height_tablet">150dp</dimen>
+    <dimen name="left_frame_width_tablet">130dp</dimen>
+    <dimen name="padding_image_left_element_tablet">46.25dp</dimen>
+
+    <dimen name="header_text_left_element_tablet">12.5dp</dimen>
+    <dimen name="padding_left_header_text_left_element_tablet">37.5dp</dimen>
+    <dimen name="padding_left_bottom_text_left_element_tablet">30dp</dimen>
+
+
+    <!-- dimens for phone   -->
+
+    <!-- header text for phone-->
+    <dimen name="header_frame_height">18dp</dimen>
+
+    <dimen name="header_size">9dp</dimen>
+
+    <dimen name="header_indent_top">1.5dp</dimen>
+    <dimen name="header_indent_left">7.5dip</dimen>
+    <dimen name="next_header_indent_left">42dp</dimen>
+
+
+    <!-- windows indents for phone-->
+    <dimen name="window_indent">10dp</dimen>
+
+
+    <!-- left elements  for phone-->
+
+    <dimen name="left_element_height">60dp</dimen>
+    <dimen name="left_frame_width">50dp</dimen>
+    <dimen name="padding_image_left_element">18.5dp</dimen>
+
+    <dimen name="header_text_left_element">5dp</dimen>
+    <dimen name="padding_left_header_text_left_element">15dp</dimen>
+    <dimen name="padding_left_bottom_text_left_element">12dp</dimen>
+
+
+    <!-- wine window -->
+    <dimen name="top_indent_amount_wine">28.5dp</dimen>
+    <dimen name="left_indent_amount_wine">22dp</dimen>
+    <dimen name="amount_wine_text">28dp</dimen>
+    <dimen name="box_ic_size">18dp</dimen>
+    <dimen name="wine_width_ww">25dp</dimen>
+    <dimen name="wine_height_ww">30dp</dimen>
+    <dimen name="left_indent_box_ww">109.5dp</dimen>
+    <dimen name="top_indent_box_ww">29.5dp</dimen>
+    <dimen name="left_indent_wine_ww">106.5dp</dimen>
+
+    <dimen name="size_text_main_in_list_view">7.5dp</dimen>
+
+
+
+</resources>

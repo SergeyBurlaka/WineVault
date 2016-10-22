@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WineVaultActivity"
+    android:background="@drawable/wood_background">
+
+    <include layout="@layout/frame_top"/>
+
+    <include layout="@layout/frame_left" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/window_indent"
+        android:layout_toEndOf="@+id/linearLayout_left_frame"
+        android:layout_below="@+id/relativeLayout_top_frame"
+        android:baselineAligned="false">
+
+
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="190dp"
+            android:layout_weight="100"
+            android:layout_height="match_parent">
+
+            <include layout="@layout/window_wine_amount"/>
+
+            <include layout="@layout/window_reminder_list"/>
+
+
+
+        </LinearLayout>
+
+
+        <include layout="@layout/window_accounting"/>
+
+   </LinearLayout>
+
+</RelativeLayout>
