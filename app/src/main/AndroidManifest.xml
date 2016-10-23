@@ -3,8 +3,10 @@
     package="com.woxapp.go.test.burlaka.winevaultapp">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_box"
         android:label="@string/app_name"
@@ -15,7 +17,9 @@
 
             android:name=".SignInActivity"
             android:label="@string/title_activity_sign_in"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,7 +29,7 @@
         </activity>
 
         <activity
-            android:name=".WineVaultActivity"
+            android:name=".WineAmountActivity"
             android:label="@string/app_name"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar">

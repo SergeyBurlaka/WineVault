@@ -3,60 +3,88 @@ package com.woxapp.go.test.burlaka.winevaultapp.data.model;
 /**
  * Created by Operator on 21.10.2016.
  */
-public class WineInStock {
-    String total ;
-    String inbox;
-    String year;
-    String bottle;
+public class WineInStock implements Model {
+
+    public static final String TABLE = "WineInStockTable";
+
+    //Labels Table Columns names
+    public static final String KEY_ID = "id";
+
+    public static final String TOTAL = "total";
+
+    public static final String INBOX = "inbox";
+
+    public static final String BOTTLE = "bottle";
+
+
+    int total ;
+    int inbox;
+    int bottle;
 
     public WineInStock(){
 
     }
 
     public WineInStock(
-            String total,
-            String inbox,
-            String year,
-            String bottle
+            int total,
+            int inbox,
+            int bottle
     ) {
 
         this.total = total;
         this.inbox = inbox;
-        this.year = year;
         this.bottle = bottle;
     }
 
-    public String getBottle() {
+    public int getBottle() {
         return bottle;
     }
 
     public void setBottle(String bottle) {
-        this.bottle = bottle;
+        if(bottle.matches("")) {this.bottle = -1; return;}
+        this.bottle = Integer.parseInt(bottle);
     }
 
-    public String getTotal() {
+    public int getTotal() {
         return total;
     }
 
     public void setTotal(String total) {
-        this.total = total;
+        if(total.matches("")) {this.total = -1; return;}
+        this.total = Integer.parseInt(total);
     }
 
-    public String getInbox() {
+    public int getInbox() {
         return inbox;
     }
 
     public void setInbox(String inbox) {
-        this.inbox = inbox;
+        if(inbox.matches("")) {this.inbox = -1; return;}
+        this.inbox = Integer.parseInt(inbox);
     }
 
-    public String getYear() {
-        return year;
+    @Override
+    public String getDate() {
+        return null;
     }
 
-    public void setYear(String year) {
-        this.year = year;
+    @Override
+    public String getWineName() {
+        return null;
     }
 
+    @Override
+    public String getText() {
+        return null;
+    }
 
+    @Override
+    public int getBottleCount() {
+        return 0;
+    }
+
+    @Override
+    public int getBoxCount() {
+        return 0;
+    }
 }

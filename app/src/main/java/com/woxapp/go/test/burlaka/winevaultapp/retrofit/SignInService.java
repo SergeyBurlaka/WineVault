@@ -12,6 +12,6 @@ import retrofit2.http.POST;
  */
 public interface SignInService {
 
-    @POST("api/v1/auth/")
+    @POST("api/v1/auth")
     Call<ResponseBody> signIn( @Body JsonObject bean );
 }

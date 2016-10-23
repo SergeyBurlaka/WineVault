@@ -14,18 +14,26 @@ import java.util.List;
 /**
  * Created by Operator on 22.10.2016.
  */
-public class GWineRVAdapter extends RecyclerView.Adapter<GWineRVAdapter.TurnoverViewHolder>{
+public class RVAdapterGotWine extends RecyclerView.Adapter<RVAdapterGotWine.TurnoverViewHolder>{
+
+
+
 
     List<Turnover> turnover;
-    public GWineRVAdapter(List<Turnover> turnover){
-        this.turnover= turnover;
+    public RVAdapterGotWine(List<Turnover> turnover){
+        this.turnover = turnover;
     }
 
 
+    public void swap(List<Turnover> datas){
+        turnover.clear();
+        turnover.addAll(datas);
+        notifyDataSetChanged();
+    }
 
     @Override
     public TurnoverViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.get_wine, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_got_wine, parent, false);
         TurnoverViewHolder pvh = new TurnoverViewHolder(v);
         return pvh;
     }
@@ -36,8 +44,8 @@ public class GWineRVAdapter extends RecyclerView.Adapter<GWineRVAdapter.Turnover
 
         holder.textData.setText(turnover.get(position).getDate());
         holder.info_text.setText(turnover.get(position).getWineName());
-        holder.amount_box.setText(turnover.get(position).getBox_count());
-        holder.amount_wine.setText(turnover.get(position).getBottle_count());
+        holder.amount_box.setText(Integer.toString(turnover.get(position).getBoxCount()));
+        holder.amount_wine.setText(Integer.toString(turnover.get(position).getBottleCount()));
 
     }
 

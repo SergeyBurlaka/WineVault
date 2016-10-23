@@ -4,30 +4,63 @@ package com.woxapp.go.test.burlaka.winevaultapp.data.model;
  * Created by Operator on 21.10.2016.
  */
 
-public class Reminder {
+public class Reminder implements Model {
 
-    private String id;
-    private String canaryId;
+    public static final String TABLE = "ReminderTable";
+
+    //Labels Table Columns names
+    public static final String KEY_ID = "id";
+
+    public static final String CANARY_ID = "canaryId";
+
+    public static final String DATE = "date";
+
+    public static final String WINE_NAME = "wineName";
+
+    public static final String BOX_COUNT= "boxCount";
+
+    public static final String BOTTLE_COUNT = "bottleCount";
+
+    public static final String TEXT = "text";
+
+    public static final String REMINDER_TYPE = "reminderType";
+
+
+
+
+    private int id;
+    private int canaryId;
     private String date;
     private String wineName;
-    private String boxCount;
-    private String bottleCount;
+    private int boxCount;
+    private int bottleCount;
     private String text;
-    private String reminderType;
+    private int reminderType;
 
-    public Reminder (){
+    private int bottleOrWine; //R.id.box or R.id.bottle
+
+    public Reminder(){
+        this.id =-1;
+        this.canaryId =-1;
+        this.date = "no date";
+        this.wineName = "no wine name";
+        this.boxCount = -1;
+        this.bottleCount = -1;
+        this.text = "no text";
+        this.reminderType = -1;
 
     }
 
     public Reminder(
-            String id,
-            String canaryId,
+            int id,
+            int canaryId,
             String date,
             String wineName,
-            String boxCount,
-            String bottleCount,
+            int boxCount,
+            int bottleCount,
             String text,
-            String reminderType) {
+            int reminderType,
+            int bottleOrWine) {
 
         this.id = id;
         this.canaryId = canaryId;
@@ -37,21 +70,34 @@ public class Reminder {
         this.bottleCount = bottleCount;
         this.text = text;
         this.reminderType = reminderType;
+        this.bottleOrWine = bottleOrWine;
     }
 
-    public String getCanaryId() {
+    public int getCanaryId() {
         return canaryId;
     }
 
     public void setCanaryId(String canaryId) {
+        if(canaryId.matches("")) {this.canaryId = -1; return;}
+        this.canaryId = Integer.parseInt(canaryId);
+    }
+
+    public void setCanaryId(int canaryId) {
+
         this.canaryId = canaryId;
     }
 
-    public String getId() {
+
+    public int getId() {
         return id;
     }
 
     public void setId(String id) {
+        if(id.matches("")) {this.id = -1; return;}
+        this.id = Integer.parseInt(id);
+    }
+
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -71,19 +117,31 @@ public class Reminder {
         this.wineName = wineName;
     }
 
-    public String getBoxCount() {
+    public int getBoxCount() {
         return boxCount;
     }
 
     public void setBoxCount(String boxCount) {
+        if(boxCount.matches("")) {this.boxCount = -1; return;}
+        this.boxCount = Integer.parseInt(boxCount);
+    }
+
+    public void setBoxCount(int boxCount) {
+
         this.boxCount = boxCount;
     }
 
-    public String getBottleCount() {
+    public int getBottleCount() {
         return bottleCount;
     }
 
     public void setBottleCount(String bottleCount) {
+        if(bottleCount.matches("")) {this.bottleCount = -1; return;}
+        this.bottleCount = Integer.parseInt(bottleCount);
+    }
+
+    public void setBottleCount(int bottleCount) {
+
         this.bottleCount = bottleCount;
     }
 
@@ -95,12 +153,25 @@ public class Reminder {
         this.text = text;
     }
 
-    public String getReminderType() {
+    public int getReminderType() {
         return reminderType;
     }
 
+
     public void setReminderType(String reminderType) {
+        if(reminderType.matches("")) {this.reminderType = -1; return;}
+        this.reminderType = Integer.parseInt(reminderType);
+    }
+
+    public void setReminderType(int reminderType) {
         this.reminderType = reminderType;
     }
 
+    public int getBottleOrWine() {
+        return bottleOrWine;
+    }
+
+    public void setBottleOrWine(int bottleOrWine) {
+        this.bottleOrWine = bottleOrWine;
+    }
 }

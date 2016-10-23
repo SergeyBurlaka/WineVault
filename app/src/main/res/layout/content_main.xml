@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WineVaultActivity"
+    tools:context=".WineAmountActivity"
     android:background="@drawable/wood_background">
 
     <include layout="@layout/frame_top"/>
@@ -28,16 +28,16 @@
             android:layout_weight="100"
             android:layout_height="match_parent">
 
-            <include layout="@layout/window_wine_amount"/>
+            <include layout="@layout/board_wine_amount"/>
 
-            <include layout="@layout/window_reminder_list"/>
+            <include layout="@layout/board_reminder_list"/>
 
 
 
         </LinearLayout>
 
 
-        <include layout="@layout/window_accounting"/>
+        <include layout="@layout/board_accounting"/>
 
    </LinearLayout>
 

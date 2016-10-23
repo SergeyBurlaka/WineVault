@@ -8,21 +8,20 @@
     android:id="@+id/reminder_layout">
 
     <TextView
-        android:layout_marginTop="@dimen/header_indent_top"
+        android:layout_marginTop="8.5dp"
         android:layout_marginLeft="@dimen/header_indent_left"
         android:textColor="@color/background_color_white"
-        android:textSize="@dimen/header_size"
+        style="@android:style/TextAppearance.Medium"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/reminder"
-        android:id="@+id/textView_reminder"
-        android:textStyle="bold" />
+        android:id="@+id/textView_reminder" />
 
 
     <android.support.v7.widget.RecyclerView
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="57.5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rv_reminder" />

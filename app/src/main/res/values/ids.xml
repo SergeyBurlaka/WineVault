@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="get_dashboard_loader" type="id">get_dashboard</item>
+    <item name="reminder" type="id">reminder</item>
+    <item name="turnover" type="id">turnover</item>
+    <item name="whine_in_stock" type="id">whine_in_stock</item>
+    <item name="wine" type="id">wine</item>
+    <item name="is_bottle" type="id">1</item>
+    <item name="bottle" type="id">bottle</item>
+    <item name="box" type="id">box</item>
+</resources>

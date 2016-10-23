@@ -2,24 +2,24 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@drawable/layout_bg_have_wine"
     android:layout_width="match_parent"
-    android:layout_height="107dp"
+    android:layout_height="246dp"
     android:layout_weight="100"
     android:layout_marginBottom="@dimen/window_indent"
     android:id="@+id/wine_layout">
 
 
     <TextView
-        android:layout_marginTop="@dimen/header_indent_top"
+        android:layout_marginTop="8.5dp"
         android:layout_marginLeft="@dimen/header_indent_left"
         android:textColor="@color/background_color_white"
-        android:textSize="@dimen/header_size"
+
+        style="@android:style/TextAppearance.Medium"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/wine_has"
-        android:id="@+id/textView_wine_has"
-        android:textStyle="bold" />
+        android:id="@+id/textView_wine_has" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -28,11 +28,12 @@
         android:id="@+id/relativeLayout">
 
     <TextView
+
         android:layout_marginTop="@dimen/top_indent_amount_wine"
         android:textColor="@color/colorPrimaryDark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/amount_wine_text"
+        android:textSize="50dp"
         android:text="@string/amount_all_wine"
         android:id="@+id/amount_all_wine"
         android:layout_centerVertical="true"
@@ -42,7 +43,7 @@
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/header_size"
+        android:textSize="16dp"
         android:text="@string/all_wine"
         android:textColor="@color/colorPrimaryDark"
         android:id="@+id/all_wine"
@@ -55,8 +56,8 @@
         <ImageView
             android:layout_marginLeft="30dp"
             android:src="@mipmap/ic_box"
-            android:layout_width="@dimen/box_ic_size"
-            android:layout_height="@dimen/box_ic_size"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:id="@+id/image_box"
             android:layout_alignTop="@+id/amount_all_wine"
             android:layout_toEndOf="@+id/amount_all_wine"
@@ -66,19 +67,20 @@
     <ImageView
 
         android:src="@mipmap/ic_wine_bottle"
-        android:layout_width="@dimen/wine_width_ww"
-        android:layout_height="@dimen/wine_height_ww"
+        android:layout_width="35dp"
+        android:layout_height="44dp"
         android:id="@+id/image_wine"
-        android:layout_below="@+id/image_box"
-        android:layout_alignEnd="@+id/image_box"
-        android:contentDescription="@string/wine_ic" />
+        android:contentDescription="@string/wine_ic"
+        android:layout_alignBottom="@+id/all_wine"
+        android:layout_alignRight="@+id/image_box"
+        android:layout_alignEnd="@+id/image_box" />
 
         <TextView
             android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimaryDark"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="28dp"
             android:text="@string/amount_wine"
             android:id="@+id/text_amount_wine_2"
 
@@ -89,10 +91,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimaryDark"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+
             android:text="@string/amount_box"
             android:id="@+id/text_amount_box"
-
+            android:textSize="28dp"
             android:layout_alignTop="@+id/image_box"
             android:layout_alignStart="@+id/text_amount_wine_2" />
 

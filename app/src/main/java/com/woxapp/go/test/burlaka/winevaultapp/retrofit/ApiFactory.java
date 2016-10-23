@@ -22,12 +22,14 @@ public class ApiFactory {
     }
 
 
-
+    @NonNull
+    public static GDBService getDBService() {
+        return buildRetrofit().create(GDBService.class);
+    }
 
 
     @NonNull
     private static Retrofit buildRetrofit() {
-        // Log.i(TAG, "onBuildRetrofitApiFactory");
         return new Retrofit.Builder()
                 .baseUrl("http://wine-cellar.biznestext.com/")
                 .client(getClient())

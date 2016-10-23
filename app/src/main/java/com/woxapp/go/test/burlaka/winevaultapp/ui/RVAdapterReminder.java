@@ -14,18 +14,24 @@ import java.util.List;
 /**
  * Created by Operator on 22.10.2016.
  */
-public class ReminderRVAdapter extends RecyclerView.Adapter<ReminderRVAdapter.ReminderViewHolder>{
+public class RVAdapterReminder extends RecyclerView.Adapter<RVAdapterReminder.ReminderViewHolder>{
 
     List<Reminder> reminders;
-    public ReminderRVAdapter(List<Reminder> reminders){
+
+    public RVAdapterReminder(List<Reminder> reminders){
         this.reminders = reminders;
     }
 
+    public void swap(List<Reminder> datas){
+        reminders.clear();
+        reminders.addAll(datas);
+        notifyDataSetChanged();
+    }
 
 
     @Override
     public ReminderViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.remind, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_remind, parent, false);
         ReminderViewHolder pvh = new ReminderViewHolder(v);
         return pvh;
     }
@@ -37,7 +43,7 @@ public class ReminderRVAdapter extends RecyclerView.Adapter<ReminderRVAdapter.Re
         holder.textData.setText(reminders.get(position).getDate());
         holder.name_text.setText(reminders.get(position).getWineName());
         holder.info_text.setText(reminders.get(position).getText());
-        holder.amount_wine.setText(reminders.get(position).getBottleCount());
+        holder.amount_wine.setText(Integer.toString(reminders.get(position).getBottleCount()));
 
     }
 
