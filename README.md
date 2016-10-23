@@ -16,6 +16,8 @@ app correctly working on tablet.
 
 ### screenshots
 
+<img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/onTabletEnter.jpg" >
+
 <img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/onTablet.jpg" >
 
-<img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/onTabletEnter.jpg" >
+
