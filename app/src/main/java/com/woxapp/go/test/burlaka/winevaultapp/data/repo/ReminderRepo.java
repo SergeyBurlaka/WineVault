@@ -16,16 +16,15 @@ import java.util.List;
 /**
  * Created by Operator on 22.10.2016.
  */
-public class ReminderRepo {
 
+public class ReminderRepo {
 
     private static final String TAG = "myTag";
 
     public ReminderRepo (){
-
     }
 
-
+    
     public  String createTable (){
         return "CREATE TABLE " + Reminder.TABLE + "("+
                 Reminder.KEY_ID + " INTEGER PRIMARY KEY, "+
@@ -36,38 +35,24 @@ public class ReminderRepo {
                 Reminder.BOTTLE_COUNT + " INTEGER, " +
                 Reminder.TEXT + " TEXT, " +
                 Reminder.REMINDER_TYPE + " INTEGER);";
-
     }
 
 
     public  void insert ( List <Reminder> reminderList ){
-
-       // Set<Integer> uniqId = new HashSet();
-        for( Reminder reminder : reminderList){
-
-         //   uniqId.add(reminder.getId());
-           // if (uniqId.contains(reminder.getId())) continue;
-
+        for( Reminder reminder : reminderList){;
             insert (reminder);
         }
     }
 
+    
     public   int insert ( Reminder reminder ){
 
         int reminderId;
 
         SQLiteDatabase db = DatabaseManager.getInstance().openDatabase();
         ContentValues values = new ContentValues();
-
-
-       // Log.i(TAG, "-^-^-SQl REMINDER REPO INSERT-^-^-" );
-      //  Log.i(TAG, "-^-^--^-^--^-^-" );
-       // Log.i(TAG, "" );
-
-       // Log.i(TAG, "SQL ADD = "+reminder.getWineName() );
-
+        
         values.put(Reminder.KEY_ID, reminder.getId());
-
 
         values.put(Reminder.CANARY_ID, reminder.getCanaryId());
 
@@ -104,12 +89,14 @@ public class ReminderRepo {
             Log.i(TAG, "Exception on getReminderList " + e);
         }
     }
+    
 
     public Cursor query (){
         SQLiteDatabase db = DatabaseManager.getInstance().openDatabase();
         return db.query(Reminder.TABLE, null, null, null, null, null, null);
     }
 
+    
     public List<Reminder> getReminderList (){
 
        List <Reminder> reminderList = new ArrayList<>();
@@ -128,9 +115,7 @@ public class ReminderRepo {
             Cursor cursor = db.rawQuery(selectQuery, null);
             // looping through all rows and adding to list
             if (cursor.moveToFirst()) {
-              //  Log.i(TAG, "   SQl " );
-              //  Log.i(TAG, "-^-^--^-^--^-^-" );
-              //  Log.i(TAG, "" );
+            
                 do {
 
                     reminder = new Reminder();
@@ -140,10 +125,8 @@ public class ReminderRepo {
                     reminderSetBoxCount(cursor, reminder);
 
                     reminder.setDate(cursor.getString(cursor.getColumnIndex(Reminder.DATE)));
-                  //  Log.i(TAG, "SQL ADD = "+cursor.getString(cursor.getColumnIndex(Reminder.DATE)) );
 
-                    reminder.setWineName(cursor.getString(cursor.getColumnIndex(Reminder.WINE_NAME)));
-                  //  Log.i(TAG, "SQL ADD = "+cursor.getString(cursor.getColumnIndex(Reminder.WINE_NAME)) );
+                    reminder.setWineName(cursor.getString(cursor.getColumnIndex(Reminder.WINE_NAME)));        
 
                     reminder.setText(cursor.getString(cursor.getColumnIndex(Reminder.TEXT)));
 
@@ -165,17 +148,15 @@ public class ReminderRepo {
 
 
     private void reminderSetBoxCount(Cursor cursor, Reminder reminder) {
-
         int bottleCount = cursor.getInt(cursor.getColumnIndex(Reminder.BOTTLE_COUNT));
         if(bottleCount ==-1 ){ reminder.setBottleOrWine(R.id.box); }
         reminder.setBottleCount(bottleCount);
     }
 
+    
     private void reminderSetBottleCount(Cursor cursor, Reminder reminder) {
-
         int boxCount = cursor.getInt(cursor.getColumnIndex(Reminder.BOX_COUNT));
         if ( boxCount == -1 ) {reminder.setBottleOrWine(R.id.bottle); return;}
         reminder.setBottleCount(boxCount);
     }
-
 }
