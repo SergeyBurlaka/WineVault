@@ -26,11 +26,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WineAmountActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>, UpdateUIInterface {
-
-
+    
     private static final String TAG = "myTag";
     private static final int LOST_WINE = 0;
     private static final int GET_WINE = 1 ;
+    
     private RecyclerView rvGetWine;
     private RecyclerView rvReminder;
     private RecyclerView rvLostWine;
@@ -134,7 +134,7 @@ public class WineAmountActivity extends AppCompatActivity implements LoaderManag
                 RVAdapterReminder.swap((List<Reminder>) models);
                 break;
             case R.id.turnover:
-                onUpdateTurnover ((List<Turnover>) models);
+                
                 RVAdapterGetWine.swap((List<Turnover>)models);
                 RVAdapterLostWine.swap((List<Turnover>)models);
                 break;
@@ -148,36 +148,7 @@ public class WineAmountActivity extends AppCompatActivity implements LoaderManag
 
     }
 
-    private void onUpdateTurnover(List <Turnover> models) {
-
-        List<Turnover> getWine,lostWine;
-
-        getWine = new ArrayList<>();
-        lostWine = new ArrayList<>();
-
-        for ( Turnover turnover : models){
-            Log.i(TAG, "^+^+^");
-            Log.i(TAG, "Turnover status id "+turnover.getStatus_id());
-            Log.i(TAG, "case lost bottle "+turnover.getWineName());
-            Log.i(TAG, "^+^+^");
-
-            switch (turnover.getStatus_id()){
-                case LOST_WINE:
-                    Log.i(TAG, "----case lost bottle "+turnover.getWineName());
-                    Log.i(TAG, "-----case lost bottle "+turnover.getStatus_id());
-                    lostWine.add(turnover);
-                    continue;
-                case GET_WINE:
-                    Log.i(TAG, "+++case get bottle "+turnover.getWineName());
-                    Log.i(TAG, "+++case get bottle "+turnover.getStatus_id());
-                    getWine.add(turnover);
-                    continue;
-            }
-        }
-        Log.i(TAG, "size get = "+getWine.size()+" lost ="+lostWine.size());
-        RVAdapterGetWine.swap(getWine);
-        RVAdapterLostWine.swap(lostWine);
-    }
+   
 
 
     private void onUpdateWineInfo(List<? extends Model> models) {
