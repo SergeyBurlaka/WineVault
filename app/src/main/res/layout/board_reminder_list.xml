@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="230dp"
     android:layout_weight="120"
-
     android:id="@+id/reminder_layout">
 
     <TextView
@@ -12,13 +11,11 @@
         android:layout_marginLeft="20dp"
         android:textColor="@color/background_color_white"
         style="@android:style/TextAppearance.Medium"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/reminder"
         android:id="@+id/textView_reminder" />
-
 
     <android.support.v7.widget.RecyclerView
         android:layout_marginLeft="20dp"
@@ -27,6 +24,4 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rv_reminder" />
-
-
 </RelativeLayout>
