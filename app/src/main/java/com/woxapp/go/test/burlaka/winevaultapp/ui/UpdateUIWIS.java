@@ -16,51 +16,35 @@ import java.util.List;
 public class UpdateUIWIS extends AsyncTask<String, String ,WineInStock > {
 
         //private static final String TAG = "myTag";
-
         UpdateUIInterface wineVaultActivity;
-
         WineInStockRepo wineInStock;
+        private WineInStock wineInStock1;
 
-private WineInStock wineInStock1;
-
-
-public UpdateUIWIS (WineAmountActivity wineVaultActivity){
-        this.wineVaultActivity = wineVaultActivity;
-        this.wineInStock = new WineInStockRepo();
-
+        public UpdateUIWIS (WineAmountActivity wineVaultActivity){
+             this.wineVaultActivity = wineVaultActivity;
+             this.wineInStock = new WineInStockRepo();
         }
 
-@Override
-protected WineInStock doInBackground(String... params) {
-
-        wineInStock1 = wineInStock.getWineInStock();
-
-           /* Log.i(TAG, "^-^-^-^-^-^-^-^-^-^-^-^-" );
-            Log.i(TAG, "" );
-            Log.i(TAG, "reminder size = " +wineInStock1.size());
-
-            for (Reminder reminder : wineInStock1){
-                Log.i(TAG, "Reminder get wine name = "+reminder.getWineName() );
-
-            }*/
-        return wineInStock1;
+        
+        @Override
+        protected WineInStock doInBackground(String... params) {
+              wineInStock1 = wineInStock.getWineInStock();
+              return wineInStock1;
         }
 
 
-@Override
-protected void onPostExecute(WineInStock wineInStock) {
-    List <WineInStock> wineInStocks = new ArrayList<>();
-    wineInStocks.add (wineInStock);
-                wineVaultActivity.onUpdateUI(wineInStocks, R.id.whine_in_stock);
+        @Override
+        protected void onPostExecute(WineInStock wineInStock) {
+             List <WineInStock> wineInStocks = new ArrayList<>();
+             wineInStocks.add (wineInStock);
+             wineVaultActivity.onUpdateUI(wineInStocks, R.id.whine_in_stock);
         }
 
-@Override
-protected void onPreExecute() {
-        }
+        @Override
+        protected void onPreExecute() {
+       }
 
-@Override
-protected void onProgressUpdate(String... text) {
-        }
-        }
-
-
+        @Override
+        protected void onProgressUpdate(String... text) {
+       }
+    }
