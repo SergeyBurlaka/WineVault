@@ -5,7 +5,6 @@ package com.woxapp.go.test.burlaka.winevaultapp.data.model;
  */
 public class Turnover implements Model {
 
-
     public static final String TABLE = "TurnoverTable";
 
     //Labels Table Columns names
@@ -23,18 +22,15 @@ public class Turnover implements Model {
 
     public static final String STATUS_ID = "statusId";
 
-
     private int id ;
     private int canary_id ;
-
     private String date;
     private String wineName;
-
     private int box_count ;
     private int bottle_count;
-
     private int status_id;
 
+    
     public Turnover(){
 
         this.id =0;
@@ -47,7 +43,6 @@ public class Turnover implements Model {
         this.bottle_count = 0;
 
         this.status_id = 0;
-
     }
 
 
@@ -160,5 +155,4 @@ public class Turnover implements Model {
 
         this.canary_id = canary_id;
     }
-
 }
