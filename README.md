@@ -4,7 +4,7 @@
 
 ### note
 
- 1) App correctly views only on tablet!
+ 1) App correctly views only on tablet, such like nexus 7 or 9.
  
  2) In cause of failed sign in,  just enter q in login without password, and sign in success.
 
