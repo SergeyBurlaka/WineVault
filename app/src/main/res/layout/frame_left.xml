@@ -7,13 +7,11 @@
     android:id="@+id/linearLayout_left_frame">
 
     <RelativeLayout
-
         android:layout_width="match_parent"
         android:layout_height="160dp"
         android:background="@color/colorPrimary">
 
         <ImageView
-
             android:id="@+id/myRectangleView"
             android:src="@mipmap/ic_dashboard"
             android:layout_width="match_parent"
@@ -23,23 +21,18 @@
             android:layout_centerHorizontal="true" />
 
         <TextView
-           android:layout_marginBottom="15dp"
+            android:layout_marginBottom="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:textSize="13dp"
             android:textColor="@color/background_color_white"
             android:text="ДАШБОРД"
             android:id="@+id/dashboard_text"
-
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true" />
 
-
-
-
     </RelativeLayout>
-
+    
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -57,20 +50,19 @@
             android:layout_centerHorizontal="true"
             android:layout_weight="1"/>
 
+       
         <TextView
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:textSize="13dp"
             android:textColor="@color/background_color_white"
             android:text="ВИНО"
             android:id="@+id/wine_text"
-
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal" />
 
+        
         <ImageView
             android:padding="28dp"
             android:id="@+id/target_img"
@@ -82,20 +74,19 @@
             android:layout_centerHorizontal="true"
             android:layout_weight="1"/>
 
+        
         <TextView
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:textSize="13dp"
             android:textColor="@color/background_color_white"
             android:text="НАВИГАЦИЯ"
             android:id="@+id/target_text"
-
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal" />
 
+        
         <ImageView
             android:padding="28dp"
             android:id="@+id/alarm_img"
@@ -107,17 +98,13 @@
             android:layout_centerHorizontal="true"
             android:layout_weight="1"/>
 
-
         <TextView
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:textSize="13dp"
             android:textColor="@color/background_color_white"
             android:text="НАПОМИНАНИЯ"
             android:id="@+id/bell_text"
-
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal" />
@@ -138,18 +125,15 @@
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:textSize="13dp"
             android:textColor="@color/background_color_white"
             android:text="СТАТИСТИКА"
             android:id="@+id/statistic_text"
-
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal" />
 
         <ImageView
-
             android:padding="25dp"
             android:id="@+id/news_img"
             android:src="@mipmap/ic_news"
@@ -159,23 +143,17 @@
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:layout_weight="1"/>
+        
+        
         <TextView
             android:layout_marginBottom="25dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:textSize="13dp"
             android:textColor="@color/background_color_white"
             android:text="НОВОСТИ"
             android:id="@+id/news_text"
-
-
-
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal" />
-
-
     </LinearLayout>
-
-
 </LinearLayout>
