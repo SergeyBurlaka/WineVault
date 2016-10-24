@@ -19,21 +19,24 @@ import java.util.List;
  * Created by Operator on 22.10.2016.
  */
 public class RVAdapterGetWine extends RecyclerView.Adapter<RVAdapterGetWine.TurnoverViewHolder>{
-
-
+    
     private static final String TAG = "myTag";
     List<Turnover> turnover;
+    
+    
     public RVAdapterGetWine(List<Turnover> turnover){
         this.turnover = turnover;
     }
 
 
     public void swap(List<Turnover> datas){
+       
         turnover.clear();
         turnover.addAll(datas);
         notifyDataSetChanged();
     }
 
+    
     @Override
     public TurnoverViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_got_wine, parent, false);
@@ -64,11 +67,13 @@ public class RVAdapterGetWine extends RecyclerView.Adapter<RVAdapterGetWine.Turn
         holder.relativeLayout.setBackgroundColor(ContextCompat.getColor(App.getContext(), R.color.background_color_white));
     }
 
+    
     @Override
     public int getItemCount() {
         return turnover.size();
     }
 
+    
     public static class TurnoverViewHolder extends RecyclerView.ViewHolder {
 
         RelativeLayout relativeLayout;
@@ -76,31 +81,23 @@ public class RVAdapterGetWine extends RecyclerView.Adapter<RVAdapterGetWine.Turn
         TextView info_text;
 
         TextView amount_box;
-
         TextView amount_wine;
-
 
         TurnoverViewHolder(View itemView) {
             super(itemView);
 
-
             textData = (TextView)itemView.findViewById(R.id.text_data_g_w);
-
             info_text = (TextView)itemView.findViewById(R.id.info_text_g_w);
-
             amount_box = (TextView)itemView.findViewById(R.id.plus_box_g_w);
-
             amount_wine = (TextView)itemView.findViewById(R.id.plus_wine_g_w);
-
             relativeLayout = (RelativeLayout) itemView.findViewById(R.id.get_wine) ;
         }
     }
 
+    
 
     @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
     }
-
-
 }
