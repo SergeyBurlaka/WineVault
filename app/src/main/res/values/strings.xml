@@ -34,5 +34,7 @@
     <string name="str4" />
     <string name="signin">НАЧАТЬ РАБОТУ</string>
     <string name="str_w">НАЧАТЬ РАБОТУ</string>
+    <string name="add_b">ДОБАВИТЬ НОВОЕ ВИНО</string>
+    <string name="add_but">add_b</string>
 
 </resources>

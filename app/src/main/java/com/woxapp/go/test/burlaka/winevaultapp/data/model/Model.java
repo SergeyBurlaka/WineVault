@@ -10,4 +10,6 @@ public interface Model {
     public int getBottleCount();
     public int getBoxCount();
 
+    public int getStatus_id();
+
 }

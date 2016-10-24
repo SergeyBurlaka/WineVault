@@ -14,7 +14,7 @@ import com.woxapp.go.test.burlaka.winevaultapp.data.model.Reminder;
 import com.woxapp.go.test.burlaka.winevaultapp.data.model.Turnover;
 import com.woxapp.go.test.burlaka.winevaultapp.data.model.WineInStock;
 import com.woxapp.go.test.burlaka.winevaultapp.loaders.GDBLoader;
-import com.woxapp.go.test.burlaka.winevaultapp.ui.RVAdapterGotWine;
+import com.woxapp.go.test.burlaka.winevaultapp.ui.RVAdapterGetWine;
 import com.woxapp.go.test.burlaka.winevaultapp.ui.RVAdapterLostWine;
 import com.woxapp.go.test.burlaka.winevaultapp.ui.RVAdapterReminder;
 import com.woxapp.go.test.burlaka.winevaultapp.ui.UpdateUIInterface;
@@ -29,11 +29,13 @@ public class WineAmountActivity extends AppCompatActivity implements LoaderManag
 
 
     private static final String TAG = "myTag";
+    private static final int LOST_WINE = 0;
+    private static final int GET_WINE = 1 ;
     private RecyclerView rvGetWine;
     private RecyclerView rvReminder;
     private RecyclerView rvLostWine;
 
-    private RVAdapterGotWine RVAdapterGotWine;
+    private RVAdapterGetWine RVAdapterGetWine;
     private RVAdapterLostWine RVAdapterLostWine;
     private RVAdapterReminder RVAdapterReminder;
     private TextView ammountAllBottle;
@@ -86,8 +88,8 @@ public class WineAmountActivity extends AppCompatActivity implements LoaderManag
         rvLostWine.setAdapter(RVAdapterLostWine);
 
         //got new wine view list
-        RVAdapterGotWine = new RVAdapterGotWine(turnovers);
-        rvGetWine.setAdapter(RVAdapterGotWine);
+        RVAdapterGetWine = new RVAdapterGetWine(turnovers);
+        rvGetWine.setAdapter(RVAdapterGetWine);
     }
 
 
@@ -132,7 +134,8 @@ public class WineAmountActivity extends AppCompatActivity implements LoaderManag
                 RVAdapterReminder.swap((List<Reminder>) models);
                 break;
             case R.id.turnover:
-                RVAdapterGotWine.swap((List<Turnover>)models);
+                onUpdateTurnover ((List<Turnover>) models);
+                RVAdapterGetWine.swap((List<Turnover>)models);
                 RVAdapterLostWine.swap((List<Turnover>)models);
                 break;
             case R.id.whine_in_stock:
@@ -143,6 +146,37 @@ public class WineAmountActivity extends AppCompatActivity implements LoaderManag
 
 
 
+    }
+
+    private void onUpdateTurnover(List <Turnover> models) {
+
+        List<Turnover> getWine,lostWine;
+
+        getWine = new ArrayList<>();
+        lostWine = new ArrayList<>();
+
+        for ( Turnover turnover : models){
+            Log.i(TAG, "^+^+^");
+            Log.i(TAG, "Turnover status id "+turnover.getStatus_id());
+            Log.i(TAG, "case lost bottle "+turnover.getWineName());
+            Log.i(TAG, "^+^+^");
+
+            switch (turnover.getStatus_id()){
+                case LOST_WINE:
+                    Log.i(TAG, "----case lost bottle "+turnover.getWineName());
+                    Log.i(TAG, "-----case lost bottle "+turnover.getStatus_id());
+                    lostWine.add(turnover);
+                    continue;
+                case GET_WINE:
+                    Log.i(TAG, "+++case get bottle "+turnover.getWineName());
+                    Log.i(TAG, "+++case get bottle "+turnover.getStatus_id());
+                    getWine.add(turnover);
+                    continue;
+            }
+        }
+        Log.i(TAG, "size get = "+getWine.size()+" lost ="+lostWine.size());
+        RVAdapterGetWine.swap(getWine);
+        RVAdapterLostWine.swap(lostWine);
     }
 
 

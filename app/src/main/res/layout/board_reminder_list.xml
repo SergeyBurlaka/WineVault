@@ -9,7 +9,7 @@
 
     <TextView
         android:layout_marginTop="8.5dp"
-        android:layout_marginLeft="@dimen/header_indent_left"
+        android:layout_marginLeft="20dp"
         android:textColor="@color/background_color_white"
         style="@android:style/TextAppearance.Medium"
 
@@ -21,6 +21,8 @@
 
 
     <android.support.v7.widget.RecyclerView
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginTop="57.5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

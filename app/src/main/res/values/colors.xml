@@ -8,7 +8,9 @@
 
     <color name="transparent_background">#00000000</color>
     <!-- 提示框的背景色 -->
+    <color name="background_color_green_dark">#fe0b600d</color>
     <color name="background_color_green">#ef7b8022</color>
+    <color name="background_color_green_light">#ef9bd9a4</color>
     <color name="background_color_black">#bb000000</color>
     <color name="background_color_blue">#e553c5f8</color>
     <color name="background_color_blue_2">#fd104bec</color>

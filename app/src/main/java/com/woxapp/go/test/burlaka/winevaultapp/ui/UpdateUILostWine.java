@@ -48,6 +48,7 @@ public class UpdateUILostWine extends AsyncTask<String, String , List<Turnover>>
     @Override
     protected void onPostExecute(List<Turnover> turnovers) {
         wineVaultActivity.onUpdateUI(turnovers, R.id.turnover);
+       // new UpdateUIWIS((WineAmountActivity) wineVaultActivity).execute();
     }
 
 

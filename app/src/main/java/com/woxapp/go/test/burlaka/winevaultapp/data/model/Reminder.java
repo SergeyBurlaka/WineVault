@@ -40,14 +40,14 @@ public class Reminder implements Model {
     private int bottleOrWine; //R.id.box or R.id.bottle
 
     public Reminder(){
-        this.id =-1;
-        this.canaryId =-1;
+        this.id =0;
+        this.canaryId =0;
         this.date = "no date";
         this.wineName = "no wine name";
-        this.boxCount = -1;
-        this.bottleCount = -1;
+        this.boxCount = 0;
+        this.bottleCount = 0;
         this.text = "no text";
-        this.reminderType = -1;
+        this.reminderType = 0;
 
     }
 
@@ -78,7 +78,7 @@ public class Reminder implements Model {
     }
 
     public void setCanaryId(String canaryId) {
-        if(canaryId.matches("")) {this.canaryId = -1; return;}
+        if(canaryId.matches("")) {this.canaryId = 0; return;}
         this.canaryId = Integer.parseInt(canaryId);
     }
 
@@ -93,7 +93,7 @@ public class Reminder implements Model {
     }
 
     public void setId(String id) {
-        if(id.matches("")) {this.id = -1; return;}
+        if(id.matches("")) {this.id = 0; return;}
         this.id = Integer.parseInt(id);
     }
 
@@ -121,8 +121,13 @@ public class Reminder implements Model {
         return boxCount;
     }
 
+    @Override
+    public int getStatus_id() {
+        return 0;
+    }
+
     public void setBoxCount(String boxCount) {
-        if(boxCount.matches("")) {this.boxCount = -1; return;}
+        if(boxCount.matches("")) {this.boxCount = 0; return;}
         this.boxCount = Integer.parseInt(boxCount);
     }
 
@@ -136,7 +141,7 @@ public class Reminder implements Model {
     }
 
     public void setBottleCount(String bottleCount) {
-        if(bottleCount.matches("")) {this.bottleCount = -1; return;}
+        if(bottleCount.matches("")) {this.bottleCount = 0; return;}
         this.bottleCount = Integer.parseInt(bottleCount);
     }
 
@@ -159,7 +164,7 @@ public class Reminder implements Model {
 
 
     public void setReminderType(String reminderType) {
-        if(reminderType.matches("")) {this.reminderType = -1; return;}
+        if(reminderType.matches("")) {this.reminderType = 0; return;}
         this.reminderType = Integer.parseInt(reminderType);
     }
 

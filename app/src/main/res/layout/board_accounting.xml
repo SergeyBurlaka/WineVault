@@ -13,7 +13,7 @@
 
     <TextView
         android:layout_marginTop="8.5dp"
-        android:layout_marginLeft="7.5dp"
+        android:layout_marginLeft="20dp"
         android:textColor="@color/background_color_white"
         style="@android:style/TextAppearance.Medium"
 
@@ -48,6 +48,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:baselineAligned="false"
+        android:id="@+id/turnover_list"
         >
 
 

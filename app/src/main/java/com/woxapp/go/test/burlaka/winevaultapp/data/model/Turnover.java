@@ -37,16 +37,16 @@ public class Turnover implements Model {
 
     public Turnover(){
 
-        this.id =-1;
-        this.canary_id  =-1;
+        this.id =0;
+        this.canary_id  =0;
 
         this.date = "no date";
         this.wineName = "no wine name";
 
-        this.box_count = -1;
-        this.bottle_count = -1;
+        this.box_count = 0;
+        this.bottle_count = 0;
 
-        this.status_id = -1;
+        this.status_id = 0;
 
     }
 
@@ -75,7 +75,7 @@ public class Turnover implements Model {
     }
 
     public void setId(String id) {
-        if(id.matches("")) {this.id = -1; return;}
+        if(id.matches("")) {this.id = 0; return;}
         this.id = Integer.parseInt(id);
     }
 
@@ -93,7 +93,7 @@ public class Turnover implements Model {
     }
 
     public void setBox_count(String box_count) {
-        if(box_count.matches("")) {this.box_count = -1; return;}
+        if(box_count.matches("")) {this.box_count = 0; return;}
         this.box_count = Integer.parseInt(box_count);
     }
 
@@ -107,7 +107,7 @@ public class Turnover implements Model {
     }
 
     public void setBottle_count(String bottle_count) {
-        if( bottle_count.matches("")) {this.bottle_count = -1; return;}
+        if( bottle_count.matches("")) {this.bottle_count = 0; return;}
         this.bottle_count = Integer.parseInt(bottle_count);
     }
 
@@ -142,7 +142,7 @@ public class Turnover implements Model {
     }
 
     public void setStatus_id(String status_id) {
-        if( status_id.matches("")) {this.status_id= -1; return;}
+        if( status_id.matches("")) {this.status_id= 0; return;}
         this.status_id = Integer.parseInt(status_id);
     }
 
@@ -152,7 +152,7 @@ public class Turnover implements Model {
     }
 
     public void setCanary_id(String canary_id) {
-        if( canary_id.matches("")) {this.canary_id = -1; return;}
+        if( canary_id.matches("")) {this.canary_id = 0; return;}
         this.canary_id = Integer.parseInt(canary_id);
     }
 

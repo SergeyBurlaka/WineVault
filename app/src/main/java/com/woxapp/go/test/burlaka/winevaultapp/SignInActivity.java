@@ -1,13 +1,18 @@
 package com.woxapp.go.test.burlaka.winevaultapp;
 
+import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.JsonObject;
 import com.woxapp.go.test.burlaka.winevaultapp.data.singletone.InternetUser;
@@ -24,8 +29,16 @@ import retrofit2.Response;
 public class SignInActivity extends AppCompatActivity implements Callback<ResponseBody> {
 
     private static final String TAG = "myTag";
+    private static final String CHEAT_CODE = "q";
     private Button signIn;
-    private SharedPreferences.Editor accessSP;
+
+    private String imei;
+
+    private EditText myLoginEdit;
+    private EditText myPassEdit;
+    private TextView badNews;
+    private ProgressBar pdialog;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,31 +47,49 @@ public class SignInActivity extends AppCompatActivity implements Callback<Respon
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        SignInService service = ApiFactory.getSignInService();
+        myLoginEdit = (EditText)findViewById(R.id.edit_login);
+        myPassEdit = (EditText) findViewById(R.id.edit_pass);
+        pdialog = (ProgressBar) findViewById(R.id.progress_bar);
+        badNews = (TextView) findViewById(R.id.text_bad_answer);
+        /*
+        * SignInService service = ApiFactory.getSignInService();
 
-        Call<ResponseBody> call = service.signIn(createBody());
-        call.enqueue(SignInActivity.this);
+                Call<ResponseBody> call = service.signIn(createBody());
+                call.enqueue(SignInActivity.this);
+        * */
 
         signIn = (Button)findViewById(R.id.button_enter);
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                createBody();
+                JsonObject jsonReqBody;
+                String login, pass;
+
+                badNews.setVisibility(View.INVISIBLE);
+                login = myLoginEdit.getText().toString();
+                pass = myPassEdit.getText().toString();
+
+                if (login.matches(CHEAT_CODE)) {
+                    jsonReqBody = createBody();
+                } else {
+
+                    if (login.matches("")||pass.matches("")){Toast.makeText(SignInActivity.this, "Введите для начала логин и пароль!", Toast.LENGTH_SHORT).show();return;}
+                     jsonReqBody = createBody(login, pass);
+                }
+                pdialog.setVisibility(ProgressBar.VISIBLE);
 
                 SignInService service = ApiFactory.getSignInService();
 
-                Call<ResponseBody> call = service.signIn(createBody());
+                Call<ResponseBody> call = service.signIn(jsonReqBody);
                 call.enqueue(SignInActivity.this);
-
-
-
             }
         });
     }
 
-    public JsonObject createBody(){
 
+    public JsonObject createBody(){
+        imei = "12345";
         JsonObject bodyReg = new JsonObject();
         bodyReg.addProperty("login","admin");
         bodyReg.addProperty("password","123456");
@@ -72,8 +103,24 @@ public class SignInActivity extends AppCompatActivity implements Callback<Respon
     }
 
 
+    public JsonObject createBody(String login, String pass) {
+
+        JsonObject bodyReg = new JsonObject();
+        bodyReg.addProperty("login", login);
+        bodyReg.addProperty("password", pass);
+        bodyReg.addProperty("imei", getImei());
+        return bodyReg;
+
+    /*json/*
+        {"login":"admin","password":"123456","imei":"12345"
+    /*json*/
+
+    }
+
+
     @Override
     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+        pdialog.setVisibility(ProgressBar.INVISIBLE);
 
         if (response.isSuccessful()) {
             try {
@@ -82,13 +129,12 @@ public class SignInActivity extends AppCompatActivity implements Callback<Respon
                 //cheers!
                 //save utility cash in singleton
                 InternetUser iu = InternetUser.getInstance();
-                iu.setImei("12345");
+                //iu.setImei("12345");
+                iu.setImei(imei);
                 iu.setJsonAccess(response.body().string());
-
                 //accessSP = getPreferences(MODE_PRIVATE).edit();
                //accessSP.putString("json_access",response.body().string());
                 //accessSP.commit();
-
                 //and
                 goNext();
 
@@ -100,6 +146,7 @@ public class SignInActivity extends AppCompatActivity implements Callback<Respon
 
         }else
         {
+            badNews.setVisibility(View.VISIBLE);
             Log.i(TAG, "NULL BODY -> " + response.errorBody());
         }
     }
@@ -115,8 +162,19 @@ public class SignInActivity extends AppCompatActivity implements Callback<Respon
     @Override
     public void onFailure(Call<ResponseBody> call, Throwable t) {
 
+        badNews.setVisibility(View.VISIBLE);
         Log.e(TAG,"Failed");
         Log.e(TAG," "+t.getMessage());
+
+    }
+
+    public  String getImei() {
+
+        TelephonyManager telephonyManager = (TelephonyManager) this
+                .getSystemService(Context.TELEPHONY_SERVICE);
+        imei = telephonyManager.getDeviceId();
+        Log.e(TAG,"My imei = "+ telephonyManager.getDeviceId());
+        return imei;
 
     }
 }

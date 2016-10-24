@@ -51,7 +51,7 @@ public class UpdateUIReminder extends AsyncTask<String, String , List<Reminder>>
         @Override
         protected void onPostExecute(List<Reminder> reminders) {
             wineVaultActivity.onUpdateUI(reminders, R.id.reminder);
-
+          //  new UpdateUILostWine((WineAmountActivity) wineVaultActivity).execute();
         }
 
         @Override

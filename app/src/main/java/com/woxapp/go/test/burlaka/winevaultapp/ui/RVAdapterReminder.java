@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.woxapp.go.test.burlaka.winevaultapp.R;
@@ -40,6 +41,12 @@ public class RVAdapterReminder extends RecyclerView.Adapter<RVAdapterReminder.Re
     @Override
     public void onBindViewHolder(ReminderViewHolder holder, int position) {
 
+
+                if(reminders.get(position).getBottleOrWine() == R.id.box){
+                    holder.boxOrBottle.setBackgroundResource(R.mipmap.ic_box);
+                }else
+                    holder.boxOrBottle.setBackgroundResource( R.mipmap.ic_wine_bottle);
+
         holder.textData.setText(reminders.get(position).getDate());
         holder.name_text.setText(reminders.get(position).getWineName());
         holder.info_text.setText(reminders.get(position).getText());
@@ -58,10 +65,11 @@ public class RVAdapterReminder extends RecyclerView.Adapter<RVAdapterReminder.Re
         TextView name_text;
         TextView info_text;
         TextView amount_wine;
+        ImageView boxOrBottle;
 
         ReminderViewHolder(View itemView) {
             super(itemView);
-
+            boxOrBottle = (ImageView) itemView.findViewById(R.id.image_wine_r);
             textData = (TextView)itemView.findViewById(R.id.text_data_r);
             name_text = (TextView)itemView.findViewById(R.id.text_main_in_r);
             info_text = (TextView)itemView.findViewById(R.id.secondary_text_in_r);

@@ -41,7 +41,7 @@ public class WineInStock implements Model {
     }
 
     public void setBottle(String bottle) {
-        if(bottle.matches("")) {this.bottle = -1; return;}
+        if(bottle.matches("")) {this.bottle = 0; return;}
         this.bottle = Integer.parseInt(bottle);
     }
 
@@ -50,7 +50,7 @@ public class WineInStock implements Model {
     }
 
     public void setTotal(String total) {
-        if(total.matches("")) {this.total = -1; return;}
+        if(total.matches("")) {this.total = 0; return;}
         this.total = Integer.parseInt(total);
     }
 
@@ -59,7 +59,7 @@ public class WineInStock implements Model {
     }
 
     public void setInbox(String inbox) {
-        if(inbox.matches("")) {this.inbox = -1; return;}
+        if(inbox.matches("")) {this.inbox = 0; return;}
         this.inbox = Integer.parseInt(inbox);
     }
 
@@ -85,6 +85,11 @@ public class WineInStock implements Model {
 
     @Override
     public int getBoxCount() {
+        return 0;
+    }
+
+    @Override
+    public int getStatus_id() {
         return 0;
     }
 }
