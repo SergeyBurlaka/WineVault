@@ -18,9 +18,9 @@
 
 app-debad_v-3 version
 
-<img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/2016-10-24%2014-40-04%20Screenshot_2.jpg">
+<img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/2016-10-24%2011-57-51%20Screenshot_1.jpg" >
 
-<imgg src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/2016-10-24%2011-57-51%20Screenshot_1.jpg">
+<img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/2016-10-24%2014-40-04%20Screenshot_2.jpg" >
 
 app-debug_v-2
 
