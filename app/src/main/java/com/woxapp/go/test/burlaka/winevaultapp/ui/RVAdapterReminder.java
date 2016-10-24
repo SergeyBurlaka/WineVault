@@ -23,6 +23,7 @@ public class RVAdapterReminder extends RecyclerView.Adapter<RVAdapterReminder.Re
         this.reminders = reminders;
     }
 
+    
     public void swap(List<Reminder> datas){
         reminders.clear();
         reminders.addAll(datas);
@@ -40,27 +41,24 @@ public class RVAdapterReminder extends RecyclerView.Adapter<RVAdapterReminder.Re
 
     @Override
     public void onBindViewHolder(ReminderViewHolder holder, int position) {
-
-
                 if(reminders.get(position).getBottleOrWine() == R.id.box){
                     holder.boxOrBottle.setBackgroundResource(R.mipmap.ic_box);
-                }else
-                    holder.boxOrBottle.setBackgroundResource( R.mipmap.ic_wine_bottle);
+                }else holder.boxOrBottle.setBackgroundResource( R.mipmap.ic_wine_bottle);
 
         holder.textData.setText(reminders.get(position).getDate());
         holder.name_text.setText(reminders.get(position).getWineName());
         holder.info_text.setText(reminders.get(position).getText());
         holder.amount_wine.setText(Integer.toString(reminders.get(position).getBottleCount()));
-
     }
 
+    
     @Override
     public int getItemCount() {
         return reminders.size();
     }
 
+    
     public static class ReminderViewHolder extends RecyclerView.ViewHolder {
-
         TextView textData;
         TextView name_text;
         TextView info_text;
@@ -82,7 +80,4 @@ public class RVAdapterReminder extends RecyclerView.Adapter<RVAdapterReminder.Re
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
     }
-
-
 }
-
