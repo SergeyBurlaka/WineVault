@@ -37,6 +37,7 @@ public class ParseDashBoard {
     private TurnoverRepo turnoverRepo;
     private WineInStockRepo wineInStockRepo;
 
+    
     public ParseDashBoard(JSONObject jsonObject){
 
         this.answerDashBoardJSONObject = jsonObject;
@@ -51,6 +52,7 @@ public class ParseDashBoard {
 
     }
 
+    
     public void onParsingJSON()  {
        // Log.i(TAG, "1 step parse");
         try {
@@ -73,16 +75,6 @@ public class ParseDashBoard {
 
 
     private void onFinishParsingJSON (){
-
-        /*Log.i(TAG, "-^-^-ParsingJSON-^-^-" );
-        Log.i(TAG, "" );
-        Log.i(TAG, "reminder size = " +reminders.size());
-
-        for (Reminder reminder : reminders){
-            Log.i(TAG, "Reminder get wine name = "+reminder.getWineName() );
-
-        }*/
-
         reminderRepo.insert(reminders);
         turnoverRepo.insert(turnovers);
         wineInStockRepo.insert(wineInStock);
@@ -90,29 +82,13 @@ public class ParseDashBoard {
 
 
     private void onParsingReminderList(JSONArray reminderArray) throws JSONException {
-
-       // Log.i(TAG, "1 step parse"+ "onParsingReminderList");
-        //Reminder rm = new Reminder();
         Reminder rm;
-
-
-       // Log.i(TAG, "-^-^--^-^--^-^-");
-
-       // Log.i(TAG, "onParsingReminderList"+reminderArray.length() );
-
+        
         for (int i = 0; i < reminderArray.length(); i++) {
-
-           // Log.i(TAG, "1 step parse"+ "onParsingReminderList");
-           // Log.i(TAG, "-^-^--^-^--^-^-");
-
-
 
             JSONObject jsonobject = reminderArray.getJSONObject(i);
             rm = new Reminder();
-
-           // Log.i(TAG, "id = "+ jsonobject.getString("id") );
-           // Log.i(TAG, "id = "+ jsonobject.getString("wineName" ) );
-
+            
             rm.setId(jsonobject.getString("id"));
             rm.setCanaryId(jsonobject.getString("canary_id"));
             rm.setDate(jsonobject.getString("date" ));
@@ -123,26 +99,16 @@ public class ParseDashBoard {
             rm.setReminderType(jsonobject.getString("ReminderType"));
 
             reminders.add(rm);
-           /* for (Reminder reminder : reminders){
-                Log.i(TAG, "@#$%^&*" );
-                Log.i(TAG, "Reminder get wine name = "+reminder.getWineName() );
-
-            }
-            Log.i(TAG, "reminds size = "+ reminders.size() );*/
         }
-
     }
 
     private void onParsingTurnoverList(JSONArray turnoverArray) throws JSONException {
 
-       // Log.i(TAG, "1 step parse"+ "onParsingTurnoverList");
+        Turnover tm;
 
-        Turnover tm;// = new Turnover();
-
-        for (int i = 0; i < reminderArrayJSON.length(); i++) {
+        for (int i = 0; i < reminderArrayJSON.length(); i++) {  
+            
             JSONObject turnoverJSON = turnoverArray.getJSONObject(i);
-
-           // Log.i(TAG, "1 step parse"+ "onParsingTurnoverList");
             tm = new Turnover();
 
             tm.setId(turnoverJSON.getString("id"));
@@ -155,16 +121,11 @@ public class ParseDashBoard {
 
             turnovers.add(tm);
         }
-
-
     }
 
     private void onParsingWineInStock(JSONObject wineInStokJSON) throws JSONException {
-
-      //  Log.i(TAG, "1 step parse"+ "onParsingWineInStock");
         wineInStock.setTotal(wineInStokJSON.getString("total"));
         wineInStock.setInbox( wineInStokJSON.getString("inbox"));
         wineInStock.setBottle(wineInStokJSON.getString("bottle"));
-
     }
 }
