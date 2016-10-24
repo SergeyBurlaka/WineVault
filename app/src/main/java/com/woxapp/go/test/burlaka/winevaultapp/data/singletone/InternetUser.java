@@ -4,6 +4,7 @@ package com.woxapp.go.test.burlaka.winevaultapp.data.singletone;
  * Created by Operator on 22.10.2016.
  */
 public class InternetUser {
+   
     private static InternetUser ourInstance = new InternetUser();
     private String imei;
     private String access_token;
@@ -16,7 +17,6 @@ public class InternetUser {
 
     private InternetUser() {
     }
-
 
     public String getCellar_id() {
         return cellar_id;
