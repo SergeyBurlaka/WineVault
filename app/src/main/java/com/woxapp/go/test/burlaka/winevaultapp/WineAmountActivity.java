@@ -53,7 +53,7 @@ public class WineAmountActivity extends AppCompatActivity implements LoaderManag
 
          ammountAllBottle =(TextView) findViewById(R.id.amount_all_wine);
          countBottle = (TextView)findViewById(R.id.text_amount_wine_2);
-        countBox = (TextView)findViewById(R.id.text_amount_box);
+         countBox = (TextView)findViewById(R.id.text_amount_box);
 
 
         getLoaderManager().initLoader(R.id.get_dashboard_loader, Bundle.EMPTY, this);
@@ -93,9 +93,6 @@ public class WineAmountActivity extends AppCompatActivity implements LoaderManag
     }
 
 
-
-
-
     @Override
     public android.content.Loader<Cursor> onCreateLoader(int id, Bundle bundle) {
         switch (id) {
@@ -108,6 +105,7 @@ public class WineAmountActivity extends AppCompatActivity implements LoaderManag
     }
 
 
+    
     @Override
     public void onLoadFinished(android.content.Loader<Cursor> loader, Cursor cursor) {
         switch ( loader.getId()) {
@@ -126,6 +124,7 @@ public class WineAmountActivity extends AppCompatActivity implements LoaderManag
         new UpdateUILostWine(this).execute();
         new UpdateUIWIS(this).execute();
     }
+    
 
     @Override
     public void onUpdateUI(List <? extends Model> models, int model) {
@@ -141,14 +140,8 @@ public class WineAmountActivity extends AppCompatActivity implements LoaderManag
             case R.id.whine_in_stock:
                 onUpdateWineInfo(models);
                 break;
-
         }
-
-
-
     }
-
-   
 
 
     private void onUpdateWineInfo(List<? extends Model> models) {
@@ -163,5 +156,4 @@ public class WineAmountActivity extends AppCompatActivity implements LoaderManag
     public void onLoaderReset(android.content.Loader<Cursor> loader) {
 
     }
-
 }
