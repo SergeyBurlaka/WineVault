@@ -17,13 +17,11 @@ import java.util.List;
  */
 public class TurnoverRepo {
 
-
     private static final String TAG ="myTag" ;
-
 
     public  String createTable (){
         return "CREATE TABLE " + Turnover.TABLE + "("+
-
+            
                 Turnover.KEY_ID + " INTEGER PRIMARY KEY, "+
                 Turnover.CANARY_ID + " INTEGER, " +
 
@@ -34,33 +32,18 @@ public class TurnoverRepo {
                 Turnover.BOTTLE_COUNT + " INTEGER, " +
 
                 Turnover.STATUS_ID + " INTEGER);";
-
     }
 
 
+    
     public  void insert ( List<Turnover> turnovers ){
-
-       // Log.i(TAG, " insert try to get  SQl " );
-
-       // Log.i(TAG, " insert try to get  SQl " + turnovers.size());
-
-        //Set<Integer> uniqId = new HashSet();
         for( Turnover turnover : turnovers){
-
-          //  uniqId.add(turnover.getId());
-           // if (uniqId.contains(turnover.getId())) continue;
-
             insert (turnover);
         }
     }
 
+    
     public   int insert ( Turnover turnover ){
-
-        /*Log.i(TAG, " SQl TURNOVER REPO INSERT " );
-        Log.i(TAG, "-^-^--^-^--^-^-" );
-        Log.i(TAG, "" );
-
-        Log.i(TAG, "SQL ADD = "+turnover.getWineName());*/
 
         int turnoverId;
 
@@ -87,6 +70,7 @@ public class TurnoverRepo {
         return turnoverId;
     }
 
+    
     public  void delete( ) {
         // if(db.e)
         try {
@@ -100,11 +84,13 @@ public class TurnoverRepo {
         }
     }
 
+    
     public Cursor query (){
         SQLiteDatabase db = DatabaseManager.getInstance().openDatabase();
         return db.query(Turnover.TABLE, null, null, null, null, null, null);
     }
 
+    
     public List<Turnover> getTurnoverList (){
 
         List<Turnover> turnovers = new ArrayList<>();
@@ -131,17 +117,9 @@ public class TurnoverRepo {
             Log.i(TAG, " try to get  SQl " );
 
             if (cursor.moveToFirst()) {
-
-                /* Log.i(TAG, "   SQl " );
-                 Log.i(TAG, "-^-^--^-^--^-^-" );
-                 Log.i(TAG, "" );*/
-
                 do {
-
                     turnover = new Turnover ();
-
-                   // Log.i(TAG, "SQL ADD = "+cursor.getString(cursor.getColumnIndex(Turnover.DATE)) );
-
+                    
                     turnover.setBottle_count(cursor.getString(cursor.getColumnIndex(Turnover.BOTTLE_COUNT)));
                     turnover.setBox_count(cursor.getString(cursor.getColumnIndex(Turnover.BOX_COUNT)));
 
@@ -165,6 +143,4 @@ public class TurnoverRepo {
         }
         return turnovers;
     }
-
-
 }
