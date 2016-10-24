@@ -25,9 +25,6 @@ public class Reminder implements Model {
 
     public static final String REMINDER_TYPE = "reminderType";
 
-
-
-
     private int id;
     private int canaryId;
     private String date;
@@ -36,9 +33,9 @@ public class Reminder implements Model {
     private int bottleCount;
     private String text;
     private int reminderType;
-
     private int bottleOrWine; //R.id.box or R.id.bottle
 
+    
     public Reminder(){
         this.id =0;
         this.canaryId =0;
@@ -48,9 +45,9 @@ public class Reminder implements Model {
         this.bottleCount = 0;
         this.text = "no text";
         this.reminderType = 0;
-
     }
 
+    
     public Reminder(
             int id,
             int canaryId,
@@ -73,30 +70,34 @@ public class Reminder implements Model {
         this.bottleOrWine = bottleOrWine;
     }
 
+    
     public int getCanaryId() {
         return canaryId;
     }
 
+    
     public void setCanaryId(String canaryId) {
         if(canaryId.matches("")) {this.canaryId = 0; return;}
         this.canaryId = Integer.parseInt(canaryId);
     }
 
+    
     public void setCanaryId(int canaryId) {
-
         this.canaryId = canaryId;
     }
 
-
+    
     public int getId() {
         return id;
     }
 
+    
     public void setId(String id) {
         if(id.matches("")) {this.id = 0; return;}
         this.id = Integer.parseInt(id);
     }
 
+    
     public void setId(int id) {
         this.id = id;
     }
