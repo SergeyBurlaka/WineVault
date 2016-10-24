@@ -1,12 +1,12 @@
 # WineVault
 
- My test to [WoxApp] (http://woxapp.com/) 
+ My test to mobile development company [WoxApp] (http://woxapp.com/). 
 
 ### note
 
  1) App correctly views only on tablet, such like nexus 7 or 9.
  
- 2) In cause of failed sign in,  just enter q in login without password, and sign in success.
+ 2) In cause of failed sign in, just enter "q" in login without password, and sign in success.
 
 ### test
 
@@ -32,5 +32,3 @@ app-debug_v-2
 
 
 <img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/onTablet.jpg" >
-
-
