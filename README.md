@@ -1,10 +1,10 @@
 # WineVault
 
-My test to [WoxApp] (http://woxapp.com/) 
+ My test to [WoxApp] (http://woxapp.com/) 
 
 ### note
 
-app correctly working on tablet.
+ App correctly working only on tablet!
 
 ### test
 
