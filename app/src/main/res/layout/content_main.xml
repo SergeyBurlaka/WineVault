@@ -19,23 +19,14 @@
         android:layout_below="@+id/relativeLayout_top_frame"
         android:baselineAligned="false">
 
-
-
-
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="190dp"
             android:layout_weight="100"
             android:layout_height="match_parent">
-
             <include layout="@layout/board_wine_amount"/>
-
             <include layout="@layout/board_reminder_list"/>
-
-
-
         </LinearLayout>
-
 
         <include layout="@layout/board_accounting"/>
 
