@@ -51,10 +51,9 @@ public class WineAmountActivity extends AppCompatActivity implements LoaderManag
         rvLostWine = (RecyclerView) findViewById(R.id.rv_lost_wine); //for turnover board 2nd column view list
         rvReminder = (RecyclerView) findViewById(R.id.rv_reminder);
 
-         ammountAllBottle =(TextView) findViewById(R.id.amount_all_wine);
-         countBottle = (TextView)findViewById(R.id.text_amount_wine_2);
-         countBox = (TextView)findViewById(R.id.text_amount_box);
-
+        ammountAllBottle =(TextView) findViewById(R.id.amount_all_wine);
+        countBottle = (TextView)findViewById(R.id.text_amount_wine_2);
+        countBox = (TextView)findViewById(R.id.text_amount_box);
 
         getLoaderManager().initLoader(R.id.get_dashboard_loader, Bundle.EMPTY, this);
 
@@ -67,7 +66,6 @@ public class WineAmountActivity extends AppCompatActivity implements LoaderManag
         LinearLayoutManager llmGetWine = new LinearLayoutManager(this);
         LinearLayoutManager llmReminder = new LinearLayoutManager(this);
         LinearLayoutManager llmLostWine = new LinearLayoutManager(this);
-
 
         rvGetWine.setLayoutManager(llmGetWine);
         rvLostWine.setLayoutManager(llmLostWine);
@@ -98,14 +96,12 @@ public class WineAmountActivity extends AppCompatActivity implements LoaderManag
         switch (id) {
             case R.id.get_dashboard_loader:
                 return new GDBLoader(this);
-
             default:
                 return null;
         }
     }
 
 
-    
     @Override
     public void onLoadFinished(android.content.Loader<Cursor> loader, Cursor cursor) {
         switch ( loader.getId()) {
@@ -133,7 +129,6 @@ public class WineAmountActivity extends AppCompatActivity implements LoaderManag
                 RVAdapterReminder.swap((List<Reminder>) models);
                 break;
             case R.id.turnover:
-                
                 RVAdapterGetWine.swap((List<Turnover>)models);
                 RVAdapterLostWine.swap((List<Turnover>)models);
                 break;
@@ -149,9 +144,9 @@ public class WineAmountActivity extends AppCompatActivity implements LoaderManag
         ammountAllBottle.setText(Integer.toString(wineInStock.getTotal()));
         countBottle.setText(Integer.toString(wineInStock.getBottle()));
         countBox.setText(Integer.toString(wineInStock.getInbox()));
-
     }
 
+    
     @Override
     public void onLoaderReset(android.content.Loader<Cursor> loader) {
 
