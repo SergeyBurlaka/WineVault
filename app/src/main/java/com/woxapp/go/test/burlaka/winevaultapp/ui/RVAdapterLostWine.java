@@ -22,10 +22,13 @@ public class RVAdapterLostWine extends RecyclerView.Adapter<RVAdapterLostWine.Tu
 
     private static final String TAG = "myTag";
     List<Turnover> turnover;
+    
+    
     public RVAdapterLostWine(List<Turnover> turnover){
         this.turnover = turnover;
     }
 
+    
     public void swap(List<Turnover> datas){
         turnover.clear();
         turnover.addAll(datas);
@@ -47,6 +50,7 @@ public class RVAdapterLostWine extends RecyclerView.Adapter<RVAdapterLostWine.Tu
         //if(status == 1) {
          //   Log.i(TAG,"on get wine ");
           //  return;}//because it is bottle waste
+        
         if(turnover.get(position).getStatus_id() == 1) {
             Log.i(TAG,"on lost wine ");
             holder.textData.setText(turnover.get(position).getDate());
@@ -56,7 +60,7 @@ public class RVAdapterLostWine extends RecyclerView.Adapter<RVAdapterLostWine.Tu
             holder.amount_wine.setText("");
             holder.relativeLayout.setBackgroundColor(ContextCompat.getColor(App.getContext(), R.color.background_color_green_light));
             return;
-        }//
+        }
 
         holder.textData.setText(turnover.get(position).getDate());
         holder.info_text.setText(turnover.get(position).getWineName());
@@ -66,33 +70,28 @@ public class RVAdapterLostWine extends RecyclerView.Adapter<RVAdapterLostWine.Tu
         holder.relativeLayout.setBackgroundColor(ContextCompat.getColor(App.getContext(), R.color.background_color_white));
     }
 
+    
     @Override
     public int getItemCount() {
         return turnover.size();
     }
 
+    
     public static class TurnoverViewHolder extends RecyclerView.ViewHolder {
-
         RelativeLayout relativeLayout;
         TextView textData;
         TextView info_text;
 
         TextView amount_box;
-
         TextView amount_wine;
-
 
         TurnoverViewHolder(View itemView) {
             super(itemView);
 
             relativeLayout = (RelativeLayout) itemView.findViewById(R.id.get_wine) ;
-
             textData = (TextView)itemView.findViewById(R.id.text_data_l_w);
-
             info_text = (TextView)itemView.findViewById(R.id.info_text_l_w);
-
             amount_box = (TextView)itemView.findViewById(R.id.amount_lost_box_l_w);
-
             amount_wine = (TextView)itemView.findViewById(R.id.amount_lost_wine_l_w);
         }
     }
@@ -102,6 +101,4 @@ public class RVAdapterLostWine extends RecyclerView.Adapter<RVAdapterLostWine.Tu
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
     }
-
-
 }
