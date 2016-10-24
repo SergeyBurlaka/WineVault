@@ -16,27 +16,19 @@
         android:layout_marginLeft="20dp"
         android:textColor="@color/background_color_white"
         style="@android:style/TextAppearance.Medium"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:text="@string/get_high"
         android:id="@+id/text_view_get_wine"
         android:layout_weight="100"/>
-
+      
     <TextView
-
         android:layout_marginTop= "8.5dp"
         android:layout_marginLeft="7.5dp"
         android:textColor="@color/background_color_white"
-
         style="@android:style/TextAppearance.Medium"
-
-
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:text="@string/consumption"
         android:id="@+id/text_view_consumption"
         android:layout_weight="100"/>
@@ -50,9 +42,6 @@
         android:baselineAligned="false"
         android:id="@+id/turnover_list"
         >
-
-
-
 
       <android.support.v7.widget.RecyclerView
           android:layout_marginTop="57.5dp"
@@ -69,13 +58,5 @@
           android:layout_weight="100"
           android:id="@+id/rv_lost_wine"
           />
-
-
-
-
     </LinearLayout>
-
-
-
-
 </RelativeLayout>
