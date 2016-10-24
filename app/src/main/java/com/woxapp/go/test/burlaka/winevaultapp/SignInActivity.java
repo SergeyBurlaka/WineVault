@@ -30,8 +30,8 @@ public class SignInActivity extends AppCompatActivity implements Callback<Respon
 
     private static final String TAG = "myTag";
     private static final String CHEAT_CODE = "q";
+    
     private Button signIn;
-
     private String imei;
 
     private EditText myLoginEdit;
@@ -57,7 +57,6 @@ public class SignInActivity extends AppCompatActivity implements Callback<Respon
                 Call<ResponseBody> call = service.signIn(createBody());
                 call.enqueue(SignInActivity.this);
         * */
-
         signIn = (Button)findViewById(R.id.button_enter);
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,10 +72,14 @@ public class SignInActivity extends AppCompatActivity implements Callback<Respon
                 if (login.matches(CHEAT_CODE)) {
                     jsonReqBody = createBody();
                 } else {
-
-                    if (login.matches("")||pass.matches("")){Toast.makeText(SignInActivity.this, "Введите для начала логин и пароль!", Toast.LENGTH_SHORT).show();return;}
+                    if (login.matches("")||pass.matches(""))
+                    {
+                     Toast.makeText(SignInActivity.this, "Введите для начала логин и пароль!", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
                      jsonReqBody = createBody(login, pass);
                 }
+                
                 pdialog.setVisibility(ProgressBar.VISIBLE);
 
                 SignInService service = ApiFactory.getSignInService();
@@ -99,7 +102,6 @@ public class SignInActivity extends AppCompatActivity implements Callback<Respon
     /*json/*
         {"login":"admin","password":"123456","imei":"12345"
     /*json*/
-
     }
 
 
@@ -114,7 +116,6 @@ public class SignInActivity extends AppCompatActivity implements Callback<Respon
     /*json/*
         {"login":"admin","password":"123456","imei":"12345"
     /*json*/
-
     }
 
 
@@ -126,16 +127,11 @@ public class SignInActivity extends AppCompatActivity implements Callback<Respon
             try {
 
                 Log.i(TAG, "Response is successful! "+response.body().toString());
-                //cheers!
+               
                 //save utility cash in singleton
                 InternetUser iu = InternetUser.getInstance();
-                //iu.setImei("12345");
                 iu.setImei(imei);
                 iu.setJsonAccess(response.body().string());
-                //accessSP = getPreferences(MODE_PRIVATE).edit();
-               //accessSP.putString("json_access",response.body().string());
-                //accessSP.commit();
-                //and
                 goNext();
 
             } catch (IOException e) {
@@ -161,20 +157,17 @@ public class SignInActivity extends AppCompatActivity implements Callback<Respon
 
     @Override
     public void onFailure(Call<ResponseBody> call, Throwable t) {
-
         badNews.setVisibility(View.VISIBLE);
         Log.e(TAG,"Failed");
         Log.e(TAG," "+t.getMessage());
-
     }
 
+    
     public  String getImei() {
-
         TelephonyManager telephonyManager = (TelephonyManager) this
                 .getSystemService(Context.TELEPHONY_SERVICE);
         imei = telephonyManager.getDeviceId();
         Log.e(TAG,"My imei = "+ telephonyManager.getDeviceId());
         return imei;
-
     }
 }
