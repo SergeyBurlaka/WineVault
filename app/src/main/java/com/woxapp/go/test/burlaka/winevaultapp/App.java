@@ -14,10 +14,8 @@ import com.woxapp.go.test.burlaka.winevaultapp.data.singletone.InternetUser;
 
 public class App  extends Application {
 
-
     private static Context context;
     private static DBHelper dbHelper;
-
     public static InternetUser iu;
 
     @Override
