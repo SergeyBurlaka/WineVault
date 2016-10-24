@@ -4,7 +4,7 @@
 
 ### note
 
- App correctly working only on tablet!
+ App correctly views only on tablet!
 
 ### test
 
