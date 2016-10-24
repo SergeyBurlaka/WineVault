@@ -14,7 +14,6 @@ import com.woxapp.go.test.burlaka.winevaultapp.data.model.WineInStock;
  */
 public class WineInStockRepo {
 
-
     private static final String TAG = "myTag";
 
     public  String createTable (){
@@ -26,14 +25,7 @@ public class WineInStockRepo {
     }
 
 
-
     public   int insert ( WineInStock wineInStock ){
-
-       // Log.i(TAG, " SQl WINE IN STOCK REPO INSERT " );
-       // Log.i(TAG, "-^-^--^-^--^-^-" );
-      //  Log.i(TAG, "" );
-
-       // Log.i(TAG, "SQL ADD "+wineInStock.getWineName());
 
         int wineInStockId;
 
@@ -53,6 +45,7 @@ public class WineInStockRepo {
         return wineInStockId;
     }
 
+    
     public  void delete( ) {
         // if(db.e)
         try {
@@ -66,14 +59,14 @@ public class WineInStockRepo {
         }
     }
 
+    
     public Cursor query (){
         SQLiteDatabase db = DatabaseManager.getInstance().openDatabase();
         return db.query(WineInStock.TABLE, null, null, null, null, null, null);
     }
 
+    
     public WineInStock getWineInStock (){
-
-
         WineInStock wineInStock = new WineInStock ();
 
         try{
@@ -83,7 +76,6 @@ public class WineInStockRepo {
 
                     + WineInStock.TABLE + "." + WineInStock.TOTAL  + ", "
                     + WineInStock.TABLE + "." + WineInStock.INBOX  + ", "
-
                     + WineInStock.TABLE + "." + WineInStock.BOTTLE
 
                     + " FROM " +	WineInStock.TABLE
@@ -95,9 +87,7 @@ public class WineInStockRepo {
                 do {
                     wineInStock.setTotal(cursor.getString(cursor.getColumnIndex(WineInStock.TOTAL)));
                     wineInStock.setInbox(cursor.getString(cursor.getColumnIndex(WineInStock.INBOX)));
-
                     wineInStock.setBottle(cursor.getString(cursor.getColumnIndex(WineInStock.BOTTLE)));
-
                 } while (cursor.moveToNext());
             }
 
@@ -111,5 +101,4 @@ public class WineInStockRepo {
         }
         return wineInStock;
     }
-
 }
