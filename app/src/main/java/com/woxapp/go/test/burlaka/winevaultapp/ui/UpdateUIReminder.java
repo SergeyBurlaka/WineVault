@@ -16,34 +16,19 @@ import java.util.List;
 
 public class UpdateUIReminder extends AsyncTask<String, String , List<Reminder>> {
 
-    //private static final String TAG = "myTag";
-
-    UpdateUIInterface wineVaultActivity;
-
+        UpdateUIInterface wineVaultActivity;
         ReminderRepo reminderRepo;
-
         private List<Reminder> reminders;
-
 
         public UpdateUIReminder(WineAmountActivity wineVaultActivity){
             this.wineVaultActivity = wineVaultActivity;
             this.reminderRepo = new ReminderRepo();
-
         }
 
+    
         @Override
         protected List <Reminder> doInBackground(String... params) {
-
-            reminders = reminderRepo.getReminderList();
-
-           /* Log.i(TAG, "^-^-^-^-^-^-^-^-^-^-^-^-" );
-            Log.i(TAG, "" );
-            Log.i(TAG, "reminder size = " +reminders.size());
-
-            for (Reminder reminder : reminders){
-                Log.i(TAG, "Reminder get wine name = "+reminder.getWineName() );
-
-            }*/
+            reminders = reminderRepo.getReminderList();   
             return reminders;
         }
 
@@ -51,15 +36,15 @@ public class UpdateUIReminder extends AsyncTask<String, String , List<Reminder>>
         @Override
         protected void onPostExecute(List<Reminder> reminders) {
             wineVaultActivity.onUpdateUI(reminders, R.id.reminder);
-          //  new UpdateUILostWine((WineAmountActivity) wineVaultActivity).execute();
         }
 
+    
         @Override
         protected void onPreExecute() {
         }
 
+    
         @Override
         protected void onProgressUpdate(String... text) {
         }
     }
-
