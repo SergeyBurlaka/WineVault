@@ -13,10 +13,9 @@ import java.util.List;
  * Created by Operator on 23.10.2016.
  */
 public class UpdateUILostWine extends AsyncTask<String, String , List<Turnover>> {
-
+    
     private static final  String TAG = "myTag";
     UpdateUIInterface wineVaultActivity;
-
     TurnoverRepo turnoverRepo;
 
     private List<Turnover> turnovers;
@@ -26,21 +25,10 @@ public class UpdateUILostWine extends AsyncTask<String, String , List<Turnover>>
         this.turnoverRepo = new TurnoverRepo();
     }
 
+    
     @Override
     protected List <Turnover> doInBackground(String... params) {
-
-
-
         turnovers = turnoverRepo.getTurnoverList();
-       /* Log.i(TAG, "^-^-^-^-^-^-^-^-^-^-^-^-" );
-        Log.i(TAG, "" );
-        Log.i(TAG, "reminder size = " +turnovers.size());
-
-        for (Turnover turnover : turnovers){
-            Log.i(TAG, "Reminder get wine name = " + turnover.getWineName() );
-
-        }*/
-
         return turnovers;
     }
 
@@ -48,7 +36,6 @@ public class UpdateUILostWine extends AsyncTask<String, String , List<Turnover>>
     @Override
     protected void onPostExecute(List<Turnover> turnovers) {
         wineVaultActivity.onUpdateUI(turnovers, R.id.turnover);
-       // new UpdateUIWIS((WineAmountActivity) wineVaultActivity).execute();
     }
 
 
@@ -56,6 +43,7 @@ public class UpdateUILostWine extends AsyncTask<String, String , List<Turnover>>
     protected void onPreExecute() {
     }
 
+    
     @Override
     protected void onProgressUpdate(String... text) {
     }
