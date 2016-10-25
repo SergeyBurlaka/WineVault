@@ -18,7 +18,7 @@
 
 ### reference 
 
-quickly and easily move to [...src/main/] (https://github.com/SergeyBurlaka/WineVault/tree/master/app/src/main)
+quickly and easily move to [.../src/main/] (https://github.com/SergeyBurlaka/WineVault/tree/master/app/src/main)
 
 ### screenshots
 
