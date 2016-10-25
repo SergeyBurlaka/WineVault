@@ -1,4 +1,4 @@
-# WineVault
+ WineVault
 
  My test to mobile development company [WoxApp] (http://woxapp.com/). 
 
@@ -14,7 +14,11 @@
 
 ### download
 
-[APK from Github] (https://github.com/SergeyBurlaka/WineVault/blob/master/app-debug_v-3.apk)  
+[APK from Github] (https://github.com/SergeyBurlaka/WineVault/blob/master/app-debug_v-3.apk) 
+
+### reference 
+
+quickly and easily move to [...src/main/] (https://github.com/SergeyBurlaka/WineVault/tree/master/app/src/main)
 
 ### screenshots
 
