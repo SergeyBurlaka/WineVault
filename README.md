@@ -36,3 +36,5 @@ app-debug_v-2
 
 
 <img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/onTablet.jpg" >
+
+ок
