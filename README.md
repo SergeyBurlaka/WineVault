@@ -10,7 +10,7 @@
 
 ### test
 
-[my app working on-line ] (https://appetize.io/app/rv7trwq9j8mtz0ayqdbwch8czw?device=nexus5&scale=75&orientation=portrait&osVersion=7.0) 
+[my app working on-line ] (https://appetize.io/app/tvaw0t2gnhxnytyaw097jumm3c?device=nexus9&scale=75&orientation=landscape&osVersion=7.0) 
 
 ### download 
 
