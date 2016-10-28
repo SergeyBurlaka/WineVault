@@ -1,10 +1,13 @@
 package com.woxapp.go.test.burlaka.winevaultapp;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
@@ -14,160 +17,162 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.gson.JsonObject;
-import com.woxapp.go.test.burlaka.winevaultapp.data.singletone.InternetUser;
-import com.woxapp.go.test.burlaka.winevaultapp.retrofit.ApiFactory;
-import com.woxapp.go.test.burlaka.winevaultapp.retrofit.SignInService;
-
-import java.io.IOException;
-
-import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
-public class SignInActivity extends AppCompatActivity implements Callback<ResponseBody> {
+public class SignInActivity extends AppCompatActivity implements SignInView  {
 
     private static final String TAG = "myTag";
     private static final String CHEAT_CODE = "q";
-    
+    private static final int PERMISSION_READ_STATE = 5;
     private Button signIn;
-    private String imei;
+
+
 
     private EditText myLoginEdit;
     private EditText myPassEdit;
     private TextView badNews;
     private ProgressBar pdialog;
+   // private String imei = "";
+    private AuthReqPresenter authReq;
+
+    private String login, pass;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         myLoginEdit = (EditText)findViewById(R.id.edit_login);
         myPassEdit = (EditText) findViewById(R.id.edit_pass);
         pdialog = (ProgressBar) findViewById(R.id.progress_bar);
         badNews = (TextView) findViewById(R.id.text_bad_answer);
-        /*
-        * SignInService service = ApiFactory.getSignInService();
 
-                Call<ResponseBody> call = service.signIn(createBody());
-                call.enqueue(SignInActivity.this);
-        * */
+        authReq = new AuthReq(this);
+
         signIn = (Button)findViewById(R.id.button_enter);
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                JsonObject jsonReqBody;
-                String login, pass;
 
                 badNews.setVisibility(View.INVISIBLE);
                 login = myLoginEdit.getText().toString();
                 pass = myPassEdit.getText().toString();
 
                 if (login.matches(CHEAT_CODE)) {
-                    jsonReqBody = createBody();
+                    authReq.onStartRequest("admin", "123456","12345");
+
                 } else {
-                    if (login.matches("")||pass.matches(""))
-                    {
-                     Toast.makeText(SignInActivity.this, "Введите для начала логин и пароль!", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                     jsonReqBody = createBody(login, pass);
+                    if (login.matches("")||pass.matches("")){Toast.makeText(SignInActivity.this, "Введите для начала логин и пароль!", Toast.LENGTH_SHORT).show();return;}
+                    onStartAuthReq();
                 }
-                
                 pdialog.setVisibility(ProgressBar.VISIBLE);
-
-                SignInService service = ApiFactory.getSignInService();
-
-                Call<ResponseBody> call = service.signIn(jsonReqBody);
-                call.enqueue(SignInActivity.this);
             }
         });
     }
 
 
-    public JsonObject createBody(){
-        imei = "12345";
-        JsonObject bodyReg = new JsonObject();
-        bodyReg.addProperty("login","admin");
-        bodyReg.addProperty("password","123456");
-        bodyReg.addProperty("imei","12345");
-        return bodyReg;
-
-    /*json/*
-        {"login":"admin","password":"123456","imei":"12345"
-    /*json*/
+    private void onStartAuthReq() {
+        if (getPermissions ()) authReq.onStartRequest( login, pass, ask_imei());
+        askUserFirst();
     }
 
 
-    public JsonObject createBody(String login, String pass) {
+    private void askUserFirst() {
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE}, PERMISSION_READ_STATE);
+    }
 
-        JsonObject bodyReg = new JsonObject();
-        bodyReg.addProperty("login", login);
-        bodyReg.addProperty("password", pass);
-        bodyReg.addProperty("imei", getImei());
-        return bodyReg;
 
-    /*json/*
-        {"login":"admin","password":"123456","imei":"12345"
-    /*json*/
+    private boolean getPermissions (){
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)
+                != PackageManager.PERMISSION_GRANTED) {
+            //   ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE}, PERMISSION_READ_STATE);
+            // We do not have this permission. Let's ask the user
+            return false;
+        }
+        return true;
     }
 
 
     @Override
-    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-        pdialog.setVisibility(ProgressBar.INVISIBLE);
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case PERMISSION_READ_STATE: {
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
-        if (response.isSuccessful()) {
-            try {
-
-                Log.i(TAG, "Response is successful! "+response.body().toString());
-               
-                //save utility cash in singleton
-                InternetUser iu = InternetUser.getInstance();
-                iu.setImei(imei);
-                iu.setJsonAccess(response.body().string());
-                goNext();
-
-            } catch (IOException e) {
-                e.printStackTrace();
+                    authReq.onStartRequest( login, pass, ask_imei());
+                   // get_imei();
+                    // permission granted!
+                    // you may now do the action that requires this permission
+                } else {
+                    // permission denied
+                }
+                return;
             }
-
-            call.toString();
-
-        }else
-        {
-            badNews.setVisibility(View.VISIBLE);
-            Log.i(TAG, "NULL BODY -> " + response.errorBody());
         }
     }
 
 
-    private void goNext() {
-        Intent goVault = new Intent(SignInActivity.this, WineAmountActivity.class);
-        startActivity( goVault);
-        finish();
+
+   private String ask_imei (){
+       String imei;
+       TelephonyManager telephonyManager = (TelephonyManager) this
+               .getSystemService(Context.TELEPHONY_SERVICE);
+       imei = telephonyManager.getDeviceId();
+       Log.e(TAG,"My imei = "+ telephonyManager.getDeviceId());
+       return imei;
+   }
+
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        authReq.onStart();
+
     }
 
 
     @Override
-    public void onFailure(Call<ResponseBody> call, Throwable t) {
-        badNews.setVisibility(View.VISIBLE);
-        Log.e(TAG,"Failed");
-        Log.e(TAG," "+t.getMessage());
+    protected void onDestroy() {
+        super.onDestroy();
+        //activityLive = false;
+        authReq.onDestroy();
+
     }
 
-    
-    public  String getImei() {
-        TelephonyManager telephonyManager = (TelephonyManager) this
-                .getSystemService(Context.TELEPHONY_SERVICE);
-        imei = telephonyManager.getDeviceId();
-        Log.e(TAG,"My imei = "+ telephonyManager.getDeviceId());
-        return imei;
+
+    /*
+    *   Implements SignInView
+    */
+
+
+    @Override
+    public void progressDialog(int dialogVisible) {
+        switch(dialogVisible){
+            case R.id.DIALOG_INVISIBLE:
+                pdialog.setVisibility(ProgressBar.INVISIBLE);
+            break;
+            case R.id.DIALOG_VISIBLE:
+                pdialog.setVisibility(ProgressBar.VISIBLE);
+            break;
+        }
+    }
+
+
+
+    @Override
+    public void showBadAnswer() {
+        badNews.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void goNextView() {
+
+            Intent goVault = new Intent(SignInActivity.this, WineAmountActivity.class);
+            startActivity( goVault);
+            finish();
+
     }
 }
+

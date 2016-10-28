@@ -10,10 +10,13 @@ import retrofit2.http.Query;
  */
 public interface GDBService /*get dash board loader*/  {
 
+
+
     @GET("/api/v1/dashboard")
         Call<ResponseBody> getDAshBoard(@Query("imei") String imei,
                                         @Query("access_token") String access_token,
                                         @Query("cellar_id") String cellar_id);
+
     /*http/*
     http://wine-cellar.biznestext.com/api/v1/dashboard ?
         imei=54321&

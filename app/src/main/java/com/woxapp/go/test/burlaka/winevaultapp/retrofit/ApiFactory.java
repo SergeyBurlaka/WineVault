@@ -21,7 +21,7 @@ public class ApiFactory {
         return buildRetrofit().create(SignInService.class);
     }
 
-        
+
     @NonNull
     public static GDBService getDBService() {
         return buildRetrofit().create(GDBService.class);
