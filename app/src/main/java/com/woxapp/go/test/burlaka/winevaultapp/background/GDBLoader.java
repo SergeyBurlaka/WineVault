@@ -1,12 +1,12 @@
-package com.woxapp.go.test.burlaka.winevaultapp.loaders;
+package com.woxapp.go.test.burlaka.winevaultapp.background;
 
 import android.content.Context;
 import android.database.Cursor;
 
 import com.woxapp.go.test.burlaka.winevaultapp.data.ParseDashBoard;
 import com.woxapp.go.test.burlaka.winevaultapp.data.singletone.InternetUser;
-import com.woxapp.go.test.burlaka.winevaultapp.retrofit.ApiFactory;
-import com.woxapp.go.test.burlaka.winevaultapp.retrofit.GDBService;
+import com.woxapp.go.test.burlaka.winevaultapp.apicall.ApiFactory;
+import com.woxapp.go.test.burlaka.winevaultapp.apicall.GDBService;
 
 import org.json.JSONException;
 import org.json.JSONObject;

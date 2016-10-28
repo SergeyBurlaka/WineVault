@@ -1,4 +1,4 @@
-package com.woxapp.go.test.burlaka.winevaultapp.retrofit;
+package com.woxapp.go.test.burlaka.winevaultapp.apicall;
 
 import android.support.annotation.NonNull;
 

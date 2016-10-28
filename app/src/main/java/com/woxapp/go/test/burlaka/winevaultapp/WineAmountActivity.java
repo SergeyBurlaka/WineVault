@@ -13,7 +13,7 @@ import com.woxapp.go.test.burlaka.winevaultapp.data.model.Model;
 import com.woxapp.go.test.burlaka.winevaultapp.data.model.Reminder;
 import com.woxapp.go.test.burlaka.winevaultapp.data.model.Turnover;
 import com.woxapp.go.test.burlaka.winevaultapp.data.model.WineInStock;
-import com.woxapp.go.test.burlaka.winevaultapp.loaders.GDBLoader;
+import com.woxapp.go.test.burlaka.winevaultapp.background.GDBLoader;
 import com.woxapp.go.test.burlaka.winevaultapp.ui.RVAdapterGetWine;
 import com.woxapp.go.test.burlaka.winevaultapp.ui.RVAdapterLostWine;
 import com.woxapp.go.test.burlaka.winevaultapp.ui.RVAdapterReminder;

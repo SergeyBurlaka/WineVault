@@ -1,4 +1,4 @@
-package com.woxapp.go.test.burlaka.winevaultapp.loaders;
+package com.woxapp.go.test.burlaka.winevaultapp.background;
 
 import android.content.AsyncTaskLoader;
 import android.content.Context;

@@ -5,8 +5,8 @@ import android.util.Log;
 import com.google.gson.JsonObject;
 import com.woxapp.go.test.burlaka.winevaultapp.R;
 import com.woxapp.go.test.burlaka.winevaultapp.data.singletone.InternetUser;
-import com.woxapp.go.test.burlaka.winevaultapp.retrofit.ApiFactory;
-import com.woxapp.go.test.burlaka.winevaultapp.retrofit.SignInService;
+import com.woxapp.go.test.burlaka.winevaultapp.apicall.ApiFactory;
+import com.woxapp.go.test.burlaka.winevaultapp.apicall.SignInService;
 
 import java.io.IOException;
 
