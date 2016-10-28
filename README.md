@@ -10,11 +10,11 @@
 
 ### test
 
-[my app working on-line ] (https://appetize.io/app/tvaw0t2gnhxnytyaw097jumm3c?device=nexus9&scale=75&orientation=landscape&osVersion=7.0) 
+[my app working on-line ] (https://appetize.io/app/y1d7fn3kfa5pn3nvnkc3c8x95w?device=nexus9&scale=75&orientation=landscape&osVersion=7.0) 
 
 ### download 
 
-[APK from Github] (https://github.com/SergeyBurlaka/WineVault/blob/master/app-debug_v-3.apk) 
+[APK from Github] (https://github.com/SergeyBurlaka/WineVault/blob/master/app-debug_v-4.apk) 
 
 ### reference 
 
@@ -22,18 +22,19 @@ quickly and easily move to [.../src/main/] (https://github.com/SergeyBurlaka/Win
 
 ### screenshots
 
-app-debag_v-3 version
+app-debag_v-4 version
 
 <img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/2016-10-24%2011-57-51%20Screenshot_1.jpg" > 
+
+
+app-debag_v-3 version
+
+
 
 
 <img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/2016-10-24%2014-40-04%20Screenshot_2.jpg" >
 
 app-debug_v-2
-
-
-<img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/onTabletEnter.jpg" >
-
 
 <img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/onTablet.jpg" >
 
