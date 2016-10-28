@@ -1,9 +1,9 @@
-package com.woxapp.go.test.burlaka.winevaultapp;
+package com.woxapp.go.test.burlaka.winevaultapp.auth;
 
 /**
  * Created by Operator on 28.10.2016.
  */
-public interface AuthReqPresenter {
+public interface SignInReqPresenter {
     void onStart();
     void onStop ();
     void onDestroy();

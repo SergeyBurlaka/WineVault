@@ -17,7 +17,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class SignInActivity extends AppCompatActivity implements SignInView  {
+import com.woxapp.go.test.burlaka.winevaultapp.auth.SignInReq;
+import com.woxapp.go.test.burlaka.winevaultapp.auth.SignInReqPresenter;
+import com.woxapp.go.test.burlaka.winevaultapp.auth.SignInView;
+
+public class SignInActivity extends AppCompatActivity implements SignInView {
 
     private static final String TAG = "myTag";
     private static final String CHEAT_CODE = "q";
@@ -31,7 +35,7 @@ public class SignInActivity extends AppCompatActivity implements SignInView  {
     private TextView badNews;
     private ProgressBar pdialog;
    // private String imei = "";
-    private AuthReqPresenter authReq;
+    private SignInReqPresenter authReq;
 
     private String login, pass;
 
@@ -46,7 +50,7 @@ public class SignInActivity extends AppCompatActivity implements SignInView  {
         pdialog = (ProgressBar) findViewById(R.id.progress_bar);
         badNews = (TextView) findViewById(R.id.text_bad_answer);
 
-        authReq = new AuthReq(this);
+        authReq = new SignInReq(this);
 
         signIn = (Button)findViewById(R.id.button_enter);
         signIn.setOnClickListener(new View.OnClickListener() {

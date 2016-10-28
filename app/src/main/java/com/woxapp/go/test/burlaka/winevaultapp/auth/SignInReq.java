@@ -1,8 +1,9 @@
-package com.woxapp.go.test.burlaka.winevaultapp;
+package com.woxapp.go.test.burlaka.winevaultapp.auth;
 
 import android.util.Log;
 
 import com.google.gson.JsonObject;
+import com.woxapp.go.test.burlaka.winevaultapp.R;
 import com.woxapp.go.test.burlaka.winevaultapp.data.singletone.InternetUser;
 import com.woxapp.go.test.burlaka.winevaultapp.retrofit.ApiFactory;
 import com.woxapp.go.test.burlaka.winevaultapp.retrofit.SignInService;
@@ -17,13 +18,13 @@ import retrofit2.Response;
 /**
  * Created by Operator on 28.10.2016.
  */
-public class AuthReq implements Callback<ResponseBody>, AuthReqPresenter {
+public class SignInReq implements Callback<ResponseBody>, SignInReqPresenter {
 
     private static final String TAG = "myTag";
     private String imei;
     private SignInView signInView;
 
-    public AuthReq (SignInView signInView){
+    public SignInReq(SignInView signInView){
         this.signInView = signInView;
     }
 
