@@ -17,9 +17,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.woxapp.go.test.burlaka.winevaultapp.auth.SignInReq;
-import com.woxapp.go.test.burlaka.winevaultapp.auth.SignInReqPresenter;
-import com.woxapp.go.test.burlaka.winevaultapp.auth.SignInView;
+import com.woxapp.go.test.burlaka.winevaultapp.login.SignInReq;
+import com.woxapp.go.test.burlaka.winevaultapp.login.SignInReqPresenter;
+import com.woxapp.go.test.burlaka.winevaultapp.login.SignInView;
 
 public class SignInActivity extends AppCompatActivity implements SignInView {
 
@@ -27,16 +27,11 @@ public class SignInActivity extends AppCompatActivity implements SignInView {
     private static final String CHEAT_CODE = "q";
     private static final int PERMISSION_READ_STATE = 5;
     private Button signIn;
-
-
-
     private EditText myLoginEdit;
     private EditText myPassEdit;
     private TextView badNews;
     private ProgressBar pdialog;
-   // private String imei = "";
     private SignInReqPresenter authReq;
-
     private String login, pass;
 
 
@@ -142,15 +137,12 @@ public class SignInActivity extends AppCompatActivity implements SignInView {
         super.onDestroy();
         //activityLive = false;
         authReq.onDestroy();
-
     }
 
 
     /*
     *   Implements SignInView
     */
-
-
     @Override
     public void progressDialog(int dialogVisible) {
         switch(dialogVisible){
@@ -162,8 +154,6 @@ public class SignInActivity extends AppCompatActivity implements SignInView {
             break;
         }
     }
-
-
 
     @Override
     public void showBadAnswer() {

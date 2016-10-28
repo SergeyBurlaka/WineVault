@@ -6,16 +6,16 @@
     tools:context=".WineAmountActivity"
     android:background="@drawable/wood_background">
 
-    <include layout="@layout/frame_top"/>
+    <include layout="@layout/frame_top_layout"/>
 
-    <include layout="@layout/frame_left" />
+    <include layout="@layout/frame_left_layout" />
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="@dimen/window_indent"
-        android:layout_toEndOf="@+id/linearLayout_left_frame"
+        android:layout_toRightOf="@+id/linearLayout_left_frame"
         android:layout_below="@+id/relativeLayout_top_frame"
         android:baselineAligned="false">
 
@@ -24,11 +24,14 @@
             android:layout_width="190dp"
             android:layout_weight="100"
             android:layout_height="match_parent">
+
             <include layout="@layout/board_wine_amount"/>
+
             <include layout="@layout/board_reminder_list"/>
+
         </LinearLayout>
 
-        <include layout="@layout/board_accounting"/>
+        <include layout="@layout/turnover_board_layout"/>
 
    </LinearLayout>
 

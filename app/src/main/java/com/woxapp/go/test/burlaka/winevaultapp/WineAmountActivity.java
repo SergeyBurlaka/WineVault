@@ -9,18 +9,16 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.woxapp.go.test.burlaka.winevaultapp.background.GDBLoader;
 import com.woxapp.go.test.burlaka.winevaultapp.data.model.Model;
 import com.woxapp.go.test.burlaka.winevaultapp.data.model.Reminder;
 import com.woxapp.go.test.burlaka.winevaultapp.data.model.Turnover;
 import com.woxapp.go.test.burlaka.winevaultapp.data.model.WineInStock;
-import com.woxapp.go.test.burlaka.winevaultapp.background.GDBLoader;
-import com.woxapp.go.test.burlaka.winevaultapp.ui.RVAdapterGetWine;
-import com.woxapp.go.test.burlaka.winevaultapp.ui.RVAdapterLostWine;
-import com.woxapp.go.test.burlaka.winevaultapp.ui.RVAdapterReminder;
+import com.woxapp.go.test.burlaka.winevaultapp.ui.ReminderRVAdapter;
+import com.woxapp.go.test.burlaka.winevaultapp.ui.TurnoverRVAdapter;
 import com.woxapp.go.test.burlaka.winevaultapp.ui.UpdateUIInterface;
-import com.woxapp.go.test.burlaka.winevaultapp.ui.UpdateUILostWine;
 import com.woxapp.go.test.burlaka.winevaultapp.ui.UpdateUIReminder;
-import com.woxapp.go.test.burlaka.winevaultapp.ui.UpdateUIWIS;
+import com.woxapp.go.test.burlaka.winevaultapp.ui.UpdateUITurnover;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,29 +26,24 @@ import java.util.List;
 public class WineAmountActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>, UpdateUIInterface {
     
     private static final String TAG = "myTag";
-    private static final int LOST_WINE = 0;
-    private static final int GET_WINE = 1 ;
-    
-    private RecyclerView rvGetWine;
     private RecyclerView rvReminder;
-    private RecyclerView rvLostWine;
-
-    private RVAdapterGetWine RVAdapterGetWine;
-    private RVAdapterLostWine RVAdapterLostWine;
-    private RVAdapterReminder RVAdapterReminder;
+    private ReminderRVAdapter reminderRVAdapter;
     private TextView ammountAllBottle;
     private TextView countBottle;
     private TextView countBox;
+    private RecyclerView rvTurnover;
+    private TurnoverRVAdapter turnoverRVAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        rvGetWine = (RecyclerView) findViewById(R.id.rv_get_wine); // for turnover board 1st column view list
-        rvLostWine = (RecyclerView) findViewById(R.id.rv_lost_wine); //for turnover board 2nd column view list
-        rvReminder = (RecyclerView) findViewById(R.id.rv_reminder);
+        rvTurnover = (RecyclerView)  findViewById(R.id.tv_list_turnover);
+        rvReminder = (RecyclerView) findViewById(R.id.rv_list_reminder);
 
+        //amount board elements
         ammountAllBottle =(TextView) findViewById(R.id.amount_all_wine);
         countBottle = (TextView)findViewById(R.id.text_amount_wine_2);
         countBox = (TextView)findViewById(R.id.text_amount_box);
@@ -63,31 +56,29 @@ public class WineAmountActivity extends AppCompatActivity implements LoaderManag
 
     private void onCreateUI() {
 
-        LinearLayoutManager llmGetWine = new LinearLayoutManager(this);
-        LinearLayoutManager llmReminder = new LinearLayoutManager(this);
-        LinearLayoutManager llmLostWine = new LinearLayoutManager(this);
-
-        rvGetWine.setLayoutManager(llmGetWine);
-        rvLostWine.setLayoutManager(llmLostWine);
-        rvReminder.setLayoutManager(llmReminder );
-
         List <Reminder> reminders = new ArrayList<>();
         List <Turnover> turnovers = new ArrayList<>();
 
         reminders.add(new Reminder());
         turnovers.add(new Turnover());
 
+ //Create RecyclerVIew List incrementally :
+   //- Create layout manager
+        LinearLayoutManager llmReminder = new LinearLayoutManager(this);
+        LinearLayoutManager llmTurnover = new LinearLayoutManager(this);
+
+    //- Set layout manager
+        rvReminder.setLayoutManager(llmReminder );
+        rvTurnover.setLayoutManager(llmTurnover);
+
+    //- Create adapter
         //reminder view list
-        RVAdapterReminder = new RVAdapterReminder(reminders);
-        rvReminder.setAdapter(RVAdapterReminder);
+        reminderRVAdapter = new ReminderRVAdapter(reminders);
+        turnoverRVAdapter = new TurnoverRVAdapter(turnovers);
 
-        //lost wine view list
-        RVAdapterLostWine = new RVAdapterLostWine(turnovers);
-        rvLostWine.setAdapter(RVAdapterLostWine);
-
-        //got new wine view list
-        RVAdapterGetWine = new RVAdapterGetWine(turnovers);
-        rvGetWine.setAdapter(RVAdapterGetWine);
+    //- Set adapter
+        rvReminder.setAdapter(reminderRVAdapter);
+        rvTurnover.setAdapter(turnoverRVAdapter);
     }
 
 
@@ -117,20 +108,19 @@ public class WineAmountActivity extends AppCompatActivity implements LoaderManag
         Log.i(TAG, "<==== update ui =====>");
 
         new UpdateUIReminder(this).execute();
-        new UpdateUILostWine(this).execute();
-        new UpdateUIWIS(this).execute();
+        new UpdateUITurnover(this).execute();
+
     }
-    
+
 
     @Override
     public void onUpdateUI(List <? extends Model> models, int model) {
         switch (model){
             case R.id.reminder:
-                RVAdapterReminder.swap((List<Reminder>) models);
+                reminderRVAdapter.swap((List<Reminder>) models);
                 break;
             case R.id.turnover:
-                RVAdapterGetWine.swap((List<Turnover>)models);
-                RVAdapterLostWine.swap((List<Turnover>)models);
+                turnoverRVAdapter.swap((List<Turnover>)models);
                 break;
             case R.id.whine_in_stock:
                 onUpdateWineInfo(models);
@@ -149,6 +139,6 @@ public class WineAmountActivity extends AppCompatActivity implements LoaderManag
     
     @Override
     public void onLoaderReset(android.content.Loader<Cursor> loader) {
-
     }
+
 }

@@ -1,4 +1,4 @@
-package com.woxapp.go.test.burlaka.winevaultapp.auth;
+package com.woxapp.go.test.burlaka.winevaultapp.login;
 
 
 /**

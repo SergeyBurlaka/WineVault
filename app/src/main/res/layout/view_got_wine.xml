@@ -39,7 +39,7 @@
         android:textStyle="bold"
         android:layout_alignBottom="@+id/image_calendar"
         android:layout_toRightOf="@+id/image_box_l"
-        android:id="@+id/text_data_g_w"/>
+        android:id="@+id/data_text"/>
 
 
     <TextView
@@ -51,7 +51,7 @@
         android:text="@string/small_text"
         android:layout_below="@+id/image_calendar"
         android:textIsSelectable="false"
-        android:id="@+id/info_text_g_w"
+        android:id="@+id/info_text"
         android:layout_alignLeft="@+id/image_calendar"
         android:layout_alignStart="@+id/image_calendar"/>
 

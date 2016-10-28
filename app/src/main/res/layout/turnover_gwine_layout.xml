@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/calendar_card"
+
+        android:layout_width="match_parent"
+        android:layout_height="115dp"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/card_margin"
+        android:elevation="3dp"
+        card_view:cardCornerRadius="@dimen/card_album_radius">
+
+        <RelativeLayout
+            android:background="@color/background_color_white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/calendar_layout">
+
+            <ImageView
+                android:layout_marginLeft="12.5dp"
+                android:layout_marginTop="4.5dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/ic_calendar"
+                android:contentDescription="@string/calendar"
+                android:id="@+id/image_calendar" />
+
+            <TextView
+                android:layout_marginBottom="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="@string/data_in_acc"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:layout_alignBottom="@+id/image_calendar"
+                android:layout_toRightOf="@+id/image_box_l"
+                android:id="@+id/data_text"/>
+
+
+            <TextView
+                android:layout_marginTop="11dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp"
+                android:text="@string/small_text"
+                android:layout_below="@+id/image_calendar"
+                android:textIsSelectable="false"
+                android:id="@+id/info_text"
+                android:layout_alignLeft="@+id/image_calendar"
+                android:layout_alignStart="@+id/image_calendar"/>
+
+
+            <View
+                android:layout_marginTop="36.5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_width="95dp"
+                android:layout_height="40dp"
+                android:background="@color/background_light"
+                android:layout_alignParentBottom="true"
+
+                android:id="@+id/colored_bar" />
+
+
+            <ImageView
+                android:layout_marginLeft="7dp"
+                android:layout_marginBottom="7dp"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@mipmap/ic_box"
+                android:contentDescription="@string/box_ic_in_list"
+                android:layout_alignBottom="@+id/colored_bar"
+                android:layout_alignLeft="@+id/colored_bar"
+                android:layout_alignStart="@+id/colored_bar"
+                android:id="@+id/image_box_l"/>
+
+
+            <TextView
+                android:layout_marginLeft="55dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@android:style/TextAppearance.Medium"
+                android:text="@string/add_some"
+                android:textColor="@color/background_color_yellow"
+                android:layout_alignBottom="@+id/image_box_l"
+                android:id="@+id/amount_box_text" />
+
+            <View
+                android:layout_marginTop="36.5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="95dp"
+                android:layout_height="40dp"
+                android:background="@color/background_light"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/colored_bar"
+                android:id="@+id/colored_bar_next"/>
+
+
+            <ImageView
+                android:layout_marginBottom="2.5dp"
+                android:layout_width="35dp"
+                android:layout_height="45dp"
+                android:src="@mipmap/ic_wine_bottle"
+                android:contentDescription="@string/wine_in_list"
+                android:id="@+id/image_wine"
+                android:layout_alignParentBottom="true"
+                android:layout_alignLeft="@+id/colored_bar_next"
+                android:layout_alignStart="@+id/colored_bar_next" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/background_color_yellow"
+                style="@android:style/TextAppearance.Medium"
+                android:text="@string/add_wine"
+                android:layout_alignBottom="@+id/image_box_l"
+                android:layout_toRightOf="@+id/image_wine"
+                android:layout_toEndOf="@+id/image_wine"
+
+                android:id="@+id/amount_wine_text"/>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>
+

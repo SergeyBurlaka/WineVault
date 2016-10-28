@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@drawable/layout_bg_reminder_list"
     android:layout_width="match_parent"
-    android:layout_height="230dp"
-    android:layout_weight="120"
+    android:layout_height="600dp"
+    android:layout_weight="240"
     android:id="@+id/reminder_layout">
 
     <TextView
@@ -23,5 +23,5 @@
         android:layout_marginTop="57.5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/rv_reminder" />
+        android:id="@+id/rv_list_reminder" />
 </RelativeLayout>

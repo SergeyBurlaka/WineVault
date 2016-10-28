@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:baselineAligned="false"
+    android:id="@+id/turnover_list"
+    >
+
+
+    <include
+        layout="@layout/turnover_gwine_layout"
+
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="100"
+        android:id="@+id/get_wine_fragment"
+        />
+
+
+
+    <include
+        layout="@layout/turnover_lwine_layout"
+
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="100"
+        android:id="@+id/lost_wine_fragment"
+        />
+
+</LinearLayout>

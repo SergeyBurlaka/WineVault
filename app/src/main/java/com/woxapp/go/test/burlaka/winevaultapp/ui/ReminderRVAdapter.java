@@ -15,11 +15,11 @@ import java.util.List;
 /**
  * Created by Operator on 22.10.2016.
  */
-public class RVAdapterReminder extends RecyclerView.Adapter<RVAdapterReminder.ReminderViewHolder>{
+public class ReminderRVAdapter extends RecyclerView.Adapter<ReminderRVAdapter.ReminderViewHolder>{
 
     List<Reminder> reminders;
 
-    public RVAdapterReminder(List<Reminder> reminders){
+    public ReminderRVAdapter(List<Reminder> reminders){
         this.reminders = reminders;
     }
 

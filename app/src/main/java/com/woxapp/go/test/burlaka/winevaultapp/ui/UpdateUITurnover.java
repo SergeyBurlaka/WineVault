@@ -10,22 +10,22 @@ import com.woxapp.go.test.burlaka.winevaultapp.data.repo.TurnoverRepo;
 import java.util.List;
 
 /**
- * Created by Operator on 23.10.2016.
+ * Created by Operator on 28.10.2016.
  */
-public class UpdateUILostWine extends AsyncTask<String, String , List<Turnover>> {
-    
+public class UpdateUITurnover extends AsyncTask<String, String , List<Turnover>> {
+
     private static final  String TAG = "myTag";
     UpdateUIInterface wineVaultActivity;
     TurnoverRepo turnoverRepo;
 
     private List<Turnover> turnovers;
 
-    public UpdateUILostWine (WineAmountActivity wineVaultActivity){
+    public UpdateUITurnover (WineAmountActivity wineVaultActivity){
         this.wineVaultActivity = wineVaultActivity;
         this.turnoverRepo = new TurnoverRepo();
     }
 
-    
+
     @Override
     protected List <Turnover> doInBackground(String... params) {
         turnovers = turnoverRepo.getTurnoverList();
@@ -43,7 +43,7 @@ public class UpdateUILostWine extends AsyncTask<String, String , List<Turnover>>
     protected void onPreExecute() {
     }
 
-    
+
     @Override
     protected void onProgressUpdate(String... text) {
     }

@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@drawable/layout_bg_have_wine"
     android:layout_width="match_parent"
-    android:layout_height="246dp"
+    android:layout_height="250dp"
     android:layout_weight="100"
     android:layout_marginBottom="@dimen/window_indent"
     android:id="@+id/wine_layout">
@@ -82,7 +82,7 @@
             android:text="@string/amount_wine"
             android:id="@+id/text_amount_wine_2"
             android:layout_alignBottom="@+id/image_wine"
-            android:layout_toEndOf="@+id/image_wine"/>
+            android:layout_toRightOf="@+id/image_wine"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -92,7 +92,7 @@
             android:id="@+id/text_amount_box"
             android:textSize="28dp"
             android:layout_alignTop="@+id/image_box"
-            android:layout_alignStart="@+id/text_amount_wine_2" />
+            android:layout_alignLeft="@+id/text_amount_wine_2" />
 
     </RelativeLayout>
 </RelativeLayout>

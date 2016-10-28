@@ -1,4 +1,4 @@
-package com.woxapp.go.test.burlaka.winevaultapp.auth;
+package com.woxapp.go.test.burlaka.winevaultapp.login;
 
 /**
  * Created by Operator on 28.10.2016.
