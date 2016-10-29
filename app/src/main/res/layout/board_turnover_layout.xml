@@ -5,7 +5,9 @@
     android:layout_weight="130"
     android:layout_height="wrap_content"
     android:layout_marginLeft="@dimen/window_indent"
-    android:id="@+id/accounting_layout">
+    android:id="@+id/accounting_layout"
+    android:layout_marginBottom="@dimen/window_indent"
+    android:layout_marginRight="@dimen/window_indent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +17,7 @@
             android:layout_marginTop="8.5dp"
             android:layout_marginLeft="20dp"
             android:textColor="@color/background_color_white"
-            style="@android:style/TextAppearance.Medium"
+            android:textSize="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/get_high"
@@ -26,7 +28,7 @@
             android:layout_marginTop= "8.5dp"
             android:layout_marginLeft="7.5dp"
             android:textColor="@color/background_color_white"
-            style="@android:style/TextAppearance.Medium"
+            android:textSize="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/consumption"
@@ -37,7 +39,7 @@
 
 
     <android.support.v7.widget.RecyclerView
-        android:layout_marginTop="57.5dp"
+        android:layout_marginTop="46dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/tv_list_turnover"

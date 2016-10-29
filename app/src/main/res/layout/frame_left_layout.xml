@@ -4,7 +4,9 @@
     android:orientation="vertical"
     android:layout_width="130dp"
     android:layout_height="match_parent"
-    android:id="@+id/linearLayout_left_frame">
+    android:id="@+id/linearLayout_left_frame"
+    android:layout_marginRight="@dimen/window_indent"
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -26,7 +28,7 @@
             android:layout_marginBottom="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="13sp"
+            style="@android:style/TextAppearance.Small"
             android:textColor="@color/background_color_white"
             android:text="@string/dash"
             android:id="@+id/dashboard_text"
@@ -57,7 +59,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="13sp"
+            style="@android:style/TextAppearance.Small"
             android:textColor="@color/background_color_white"
             android:text="@string/wine"
             android:id="@+id/wine_text"
@@ -80,7 +82,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="13sp"
+            style="@android:style/TextAppearance.Small"
             android:textColor="@color/background_color_white"
             android:text="@string/target"
             android:id="@+id/target_text"
@@ -102,7 +104,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="13sp"
+            style="@android:style/TextAppearance.Small"
             android:textColor="@color/background_color_white"
             android:text="@string/bell"
             android:id="@+id/bell_text"
@@ -125,7 +127,7 @@
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="13sp"
+            style="@android:style/TextAppearance.Small"
             android:textColor="@color/background_color_white"
             android:text="@string/statistic"
             android:id="@+id/statistic_text"
@@ -148,7 +150,7 @@
             android:layout_marginBottom="25dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="13sp"
+            style="@android:style/TextAppearance.Small"
             android:textColor="@color/background_color_white"
             android:text="@string/news"
             android:id="@+id/news_text"

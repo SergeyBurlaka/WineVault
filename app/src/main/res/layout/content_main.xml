@@ -6,18 +6,30 @@
     tools:context=".WineAmountActivity"
     android:background="@drawable/img_wood_background">
 
-    <include layout="@layout/frame_top_layout"/>
 
+    <include layout="@layout/frame_top_layout"
+        android:id="@+id/include" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_with_shadow"
+        android:id="@+id/relativeLayout2">
     <include layout="@layout/frame_left_layout" />
+    </RelativeLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/window_indent"
-        android:layout_toRightOf="@+id/linearLayout_left_frame"
-        android:layout_below="@+id/relativeLayout_top_frame"
-        android:baselineAligned="false">
+        android:background="@drawable/background_with_shadow"
+        android:baselineAligned="false"
+        android:layout_marginTop="@dimen/window_indent"
+
+
+        android:layout_toEndOf="@+id/relativeLayout2"
+        android:layout_below="@+id/include"
+        android:layout_toRightOf="@+id/relativeLayout2">
 
         <LinearLayout
             android:orientation="vertical"
@@ -31,7 +43,8 @@
 
         </LinearLayout>
 
-        <include layout="@layout/board_turnover_layout" />
+        <include
+            layout="@layout/board_turnover_layout" />
 
    </LinearLayout>
 

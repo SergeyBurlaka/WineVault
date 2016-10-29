@@ -3,17 +3,21 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/tools"
     android:background="@drawable/img_wood_background">
 
 
 
     <android.support.v7.widget.CardView
         android:id="@+id/card_view_main"
-        android:layout_width="420dp"
-        android:layout_height="350dp"
+        android:layout_width="430dp"
+        android:layout_height="320dp"
         card_view:cardCornerRadius="@dimen/card_album_radius"
+        app:cardUseCompatPadding="true"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        card_view:cardElevation="10dp"
+        card_view:cardUseCompatPadding="true">
 
 
         <LinearLayout
@@ -34,6 +38,9 @@
                 android:id="@+id/textView2"
                 android:layout_gravity="center_horizontal" />
 
+           <RelativeLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content">
             <ProgressBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -41,18 +48,21 @@
                 android:indeterminateOnly="true"
                 android:id="@+id/progress_bar"
                 android:visibility="invisible"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                android:layout_alignTop="@+id/edit_login"
+                android:layout_centerHorizontal="true" />
 
             <EditText
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
                 android:id="@+id/edit_login"
                 android:layout_gravity="center_horizontal"
                 android:inputType="none" />
+           </RelativeLayout>
 
             <TextView
                 android:layout_gravity="center_horizontal"
@@ -64,8 +74,8 @@
 
             <EditText
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
