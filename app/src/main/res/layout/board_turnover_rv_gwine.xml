@@ -61,8 +61,8 @@
                 android:layout_width="95dp"
                 android:layout_height="40dp"
                 android:background="@drawable/rectangles_card_turnover"
-                android:id="@+id/colored_bar"
-                android:layout_alignTop="@+id/colored_bar_next"
+                android:id="@+id/view_box"
+                android:layout_alignTop="@+id/view_bottle"
                 android:layout_alignLeft="@+id/info_text"
                 android:layout_alignStart="@+id/info_text" />
 
@@ -74,9 +74,9 @@
                 android:src="@mipmap/ic_box"
                 android:contentDescription="@string/box_ic_in_list"
                 android:id="@+id/image_box_l"
-                android:layout_alignBottom="@+id/colored_bar"
-                android:layout_alignLeft="@+id/colored_bar"
-                android:layout_alignStart="@+id/colored_bar" />
+                android:layout_alignBottom="@+id/view_box"
+                android:layout_alignLeft="@+id/view_box"
+                android:layout_alignStart="@+id/view_box" />
 
 
             <TextView
@@ -100,8 +100,8 @@
                 android:layout_height="40dp"
                 android:background="@drawable/rectangles_card_turnover"
                 android:layout_alignParentBottom="true"
-                android:layout_toRightOf="@+id/colored_bar"
-                android:id="@+id/colored_bar_next"/>
+                android:layout_toRightOf="@+id/view_box"
+                android:id="@+id/view_bottle"/>
 
 
             <ImageView
@@ -110,9 +110,9 @@
                 android:src="@mipmap/ic_wine_bottle"
                 android:contentDescription="@string/wine_in_list"
                 android:id="@+id/image_wine"
-                android:layout_alignTop="@+id/colored_bar_next"
-                android:layout_alignLeft="@+id/colored_bar_next"
-                android:layout_alignStart="@+id/colored_bar_next" />
+                android:layout_alignTop="@+id/view_bottle"
+                android:layout_alignLeft="@+id/view_bottle"
+                android:layout_alignStart="@+id/view_bottle" />
 
             <TextView
                 android:paddingBottom="5dp"

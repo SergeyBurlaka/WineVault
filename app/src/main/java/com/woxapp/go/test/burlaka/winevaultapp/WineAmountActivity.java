@@ -7,7 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.woxapp.go.test.burlaka.winevaultapp.background.GDBLoader;
 import com.woxapp.go.test.burlaka.winevaultapp.data.model.Model;
@@ -139,6 +141,36 @@ public class WineAmountActivity extends AppCompatActivity implements LoaderManag
     
     @Override
     public void onLoaderReset(android.content.Loader<Cursor> loader) {
+    }
+
+
+    public void onAddNewWine(View view){
+        Toast.makeText(WineAmountActivity.this, "Add new wine", Toast.LENGTH_SHORT).show();
+    }
+
+    //onDashBoardClick, onWineClick, onTargetClick, onBellClick, onStatisticsClick, onNewsClick,
+    public void onDashBoardClick(View view){
+        Toast.makeText(WineAmountActivity.this, "Dash Board", Toast.LENGTH_SHORT).show();
+    }
+
+    public void onWineClick(View view){
+        Toast.makeText(WineAmountActivity.this, "Wine", Toast.LENGTH_SHORT).show();
+    }
+
+    public void onTargetClick(View view){
+        Toast.makeText(WineAmountActivity.this, "Target", Toast.LENGTH_SHORT).show();
+    }
+
+    public void onBellClick(View view){
+        Toast.makeText(WineAmountActivity.this, "Bell", Toast.LENGTH_SHORT).show();
+    }
+
+    public void onStatisticsClick(View view){
+        Toast.makeText(WineAmountActivity.this, "Statistics", Toast.LENGTH_SHORT).show();
+    }
+
+    public void onNewsClick(View view){
+        Toast.makeText(WineAmountActivity.this, "News", Toast.LENGTH_SHORT).show();
     }
 
 }

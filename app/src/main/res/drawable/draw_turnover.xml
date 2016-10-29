@@ -36,7 +36,7 @@
     <item
         android:top="15dp"
         android:width="5dp"
-        android:drawable="@drawable/line_turnover"
+        android:drawable="@drawable/rectangle_turnover"
         android:gravity="center_horizontal" />
 
 

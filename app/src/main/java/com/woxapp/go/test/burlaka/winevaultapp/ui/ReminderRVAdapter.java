@@ -47,8 +47,8 @@ public class ReminderRVAdapter extends RecyclerView.Adapter<ReminderRVAdapter.Re
                     holder.boxOrBottle.setBackgroundResource(R.mipmap.ic_box);
                 }else holder.boxOrBottle.setBackgroundResource( R.mipmap.ic_wine_bottle);
 
-        if (position==0){holder.relativeLayoutReminder.setBackgroundResource(R.drawable.line_frame_reminder_red );
-        }else holder.relativeLayoutReminder.setBackgroundResource(R.drawable.line_frame_reminder);
+        if (position==0){holder.relativeLayoutReminder.setBackgroundResource(R.drawable.frame_reminder_red);
+        }else holder.relativeLayoutReminder.setBackgroundResource(R.drawable.frame_reminder);
 
         holder.textData.setText(reminders.get(position).getDate());
         holder.name_text.setText(reminders.get(position).getWineName());

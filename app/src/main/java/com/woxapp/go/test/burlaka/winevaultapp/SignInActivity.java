@@ -33,6 +33,8 @@ public class SignInActivity extends AppCompatActivity implements SignInView {
     private ProgressBar pdialog;
     private SignInReqPresenter authReq;
     private String login, pass;
+    private TextView editPassText;
+    private TextView editLoginText;
 
 
     @Override
@@ -40,12 +42,16 @@ public class SignInActivity extends AppCompatActivity implements SignInView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
+
         myLoginEdit = (EditText)findViewById(R.id.edit_login);
         myPassEdit = (EditText) findViewById(R.id.edit_pass);
+
         pdialog = (ProgressBar) findViewById(R.id.progress_bar);
         badNews = (TextView) findViewById(R.id.text_bad_answer);
 
         authReq = new SignInReq(this);
+
+
 
         signIn = (Button)findViewById(R.id.button_enter);
         signIn.setOnClickListener(new View.OnClickListener() {
@@ -67,6 +73,8 @@ public class SignInActivity extends AppCompatActivity implements SignInView {
             }
         });
     }
+
+
 
 
     private void onStartAuthReq() {

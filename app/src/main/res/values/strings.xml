@@ -35,4 +35,11 @@
     <string name="str_w">НАЧАТЬ РАБОТУ</string>
     <string name="add_b">ДОБАВИТЬ НОВОЕ ВИНО</string>
     <string name="add_but">add_b</string>
+    <string name="statistic">СТАТИСТИКА</string>
+    <string name="target">НАВИГАЦИЯ</string>
+    <string name="wine">ВИНО</string>
+    <string name="bell">НАПОМИНАНИЯ</string>
+    <string name="news">НОВОСТИ</string>
+    <string name="dash">ДАШБОРД</string>
+    <string name="dashboard_name">ДАШБОРД</string>
 </resources>

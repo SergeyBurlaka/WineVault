@@ -15,7 +15,7 @@
         card_view:cardCornerRadius="@dimen/card_album_radius">
         
     <RelativeLayout
-        android:background="@drawable/line_frame_reminder"
+        android:background="@drawable/frame_reminder"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"

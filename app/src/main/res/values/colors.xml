@@ -7,7 +7,11 @@
     <color name="background_light">#e4e4e4</color>
     <color name="transparent_background">#00000000</color>
     <color name="background_color_green_dark">#fe0b600d</color>
-    <color name="background_color_green">#ef7b8022</color>
+
+    <!--app uses color-->
+    <color name="background_color_green">#918824</color>
+    <color name="background_color_yellow_l">#fcf9ec</color>
+
     <color name="background_color_green_light">#ef9bd9a4</color>
     <color name="background_color_black">#bb000000</color>
     <color name="background_color_blue">#e553c5f8</color>
@@ -16,7 +20,7 @@
     <color name="background_color_light">#6da2cef1</color>
     <color name="background_color_pink_dark">#bbda2191</color>
     <color name="background_color_yellow">#e5d29b36</color>
-    <color name="background_color_yellow_l">#e5f7efc8</color>
+
     <color name="background_color_brown">#e54c2316</color>
     <color name="background_color_purple">#e5800080</color>
     <color name="background_color_red">#e5ff0000</color>

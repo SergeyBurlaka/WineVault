@@ -3,7 +3,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wood_background"
+    android:background="@drawable/img_wood_background"
     android:orientation="vertical">
 
     <android.support.v7.widget.CardView
@@ -11,7 +11,7 @@
         android:layout_marginTop="230dp"
         android:id="@+id/card_view_main"
         android:layout_width="420dp"
-        android:layout_height="300dp"
+        android:layout_height="345dp"
         card_view:cardCornerRadius="@dimen/card_album_radius"
        >
 
@@ -19,7 +19,7 @@
             android:orientation="vertical"
             android:layout_margin="3dp"
             android:id="@+id/list_container_bg"
-            android:background="@drawable/notebook"
+            android:background="@drawable/img_notebook"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -33,14 +33,24 @@
                 android:id="@+id/textView2"
                 android:layout_gravity="center_horizontal" />
 
+
             <EditText
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:id="@+id/edit_login"
                 android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Логин"
+                android:id="@+id/text_login" />
 
             <EditText
                 android:layout_marginTop="10dp"
@@ -54,6 +64,15 @@
                 android:layout_gravity="center_horizontal" />
 
             <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Пароль"
+                android:id="@+id/textView3"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_width="wrap_content"
@@ -64,7 +83,7 @@
                 android:id="@+id/text_bad_answer"
                 android:textColor="@color/design_textinput_error_color_light"
                 android:layout_gravity="center_horizontal" />
-            
+
             <ProgressBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -75,14 +94,15 @@
                 android:layout_gravity="center_horizontal" />
 
             <Button
+
                 android:layout_gravity="center_horizontal"
                 android:paddingLeft="30dp"
                 android:paddingRight="30dp"
                 android:layout_width="wrap_content"
-                android:layout_height="32dp"
+                android:layout_height="36dp"
                 android:text="@string/str_w"
                 android:textColor="@color/background_color_yellow_l"
-                android:background="@color/background_color_green"
+                android:background="@drawable/style_button"
                 android:id="@+id/button_enter"/>
 
         </LinearLayout>

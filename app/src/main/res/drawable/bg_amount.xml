@@ -27,7 +27,7 @@
         android:bottom="6dp">
         <bitmap
 
-            android:src="@drawable/small_notebook">
+            android:src="@drawable/img_small_notebook">
 
         </bitmap>
     </item>

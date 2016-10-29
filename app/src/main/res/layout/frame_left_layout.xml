@@ -18,15 +18,17 @@
             android:layout_height="35dp"
             android:contentDescription="@string/dashboard_img"
             android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:onClick="onDashBoardClick"
+            android:clickable="true"/>
 
         <TextView
             android:layout_marginBottom="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="13dp"
+            android:textSize="13sp"
             android:textColor="@color/background_color_white"
-            android:text="ДАШБОРД"
+            android:text="@string/dash"
             android:id="@+id/dashboard_text"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true" />
@@ -36,124 +38,120 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
+
         android:orientation="vertical">
 
         <ImageView
+            android:layout_gravity="center_horizontal"
             android:padding="20dp"
             android:id="@+id/wine_img"
             android:src="@mipmap/ic_w_wine"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:contentDescription="@string/dashboard_img"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:onClick="onWineClick"
+            android:clickable="true"/>
 
        
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="13dp"
+            android:textSize="13sp"
             android:textColor="@color/background_color_white"
-            android:text="ВИНО"
+            android:text="@string/wine"
             android:id="@+id/wine_text"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal" />
 
         
         <ImageView
-            android:padding="28dp"
+            android:layout_gravity="center_horizontal"
+            android:padding="30dp"
             android:id="@+id/target_img"
             android:src="@mipmap/ic_target"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:contentDescription="@string/dashboard_img"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:onClick="onTargetClick"
+            android:clickable="true"/>
 
         
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="13dp"
+            android:textSize="13sp"
             android:textColor="@color/background_color_white"
-            android:text="НАВИГАЦИЯ"
+            android:text="@string/target"
             android:id="@+id/target_text"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal" />
 
         
         <ImageView
-            android:padding="28dp"
+            android:layout_gravity="center_horizontal"
+            android:padding="25dp"
             android:id="@+id/alarm_img"
             android:src="@mipmap/ic_bell"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:contentDescription="@string/dashboard_img"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:onClick="onBellClick"
+            android:clickable="true"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="13dp"
+            android:textSize="13sp"
             android:textColor="@color/background_color_white"
-            android:text="НАПОМИНАНИЯ"
+            android:text="@string/bell"
             android:id="@+id/bell_text"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal" />
 
 
         <ImageView
-            android:padding="28dp"
+            android:layout_gravity="center_horizontal"
+            android:padding="22dp"
             android:id="@+id/graph_img"
             android:src="@mipmap/ic_statistics"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:contentDescription="@string/dashboard_img"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:onClick="onStatisticsClick"
+            android:clickable="true"/>
 
         <TextView
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="13dp"
+            android:textSize="13sp"
             android:textColor="@color/background_color_white"
-            android:text="СТАТИСТИКА"
+            android:text="@string/statistic"
             android:id="@+id/statistic_text"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal" />
 
         <ImageView
-            android:padding="25dp"
+            android:layout_gravity="center_horizontal"
+            android:padding="22dp"
             android:id="@+id/news_img"
             android:src="@mipmap/ic_news"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:contentDescription="@string/dashboard_img"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:onClick="onNewsClick"
+            android:clickable="true"/>
         
         
         <TextView
             android:layout_marginBottom="25dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="13dp"
+            android:textSize="13sp"
             android:textColor="@color/background_color_white"
-            android:text="НОВОСТИ"
+            android:text="@string/news"
             android:id="@+id/news_text"
-            android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal" />
     </LinearLayout>
 </LinearLayout>
