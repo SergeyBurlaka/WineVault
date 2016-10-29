@@ -46,33 +46,21 @@ public class ReminderRepo {
 
     
     public   int insert ( Reminder reminder ){
-
         int reminderId;
-
         SQLiteDatabase db = DatabaseManager.getInstance().openDatabase();
         ContentValues values = new ContentValues();
-        
         values.put(Reminder.KEY_ID, reminder.getId());
-
         values.put(Reminder.CANARY_ID, reminder.getCanaryId());
-
         values.put(Reminder.DATE, reminder.getDate());
-
         values.put(Reminder.WINE_NAME, reminder.getWineName());
-
         values.put(Reminder.BOX_COUNT, reminder.getBoxCount());
-
         values.put(Reminder.BOTTLE_COUNT, reminder.getBottleCount());
-
         values.put(Reminder.TEXT, reminder.getText());
-
         values.put(Reminder.REMINDER_TYPE, reminder.getReminderType());
 
         //Inserting Row
         reminderId = (int)db.insert(Reminder.TABLE, null, values);
-
         DatabaseManager.getInstance().closeDatabase();
-
         return reminderId;
     }
 
@@ -115,23 +103,14 @@ public class ReminderRepo {
             Cursor cursor = db.rawQuery(selectQuery, null);
             // looping through all rows and adding to list
             if (cursor.moveToFirst()) {
-            
                 do {
-
                     reminder = new Reminder();
-
                     reminderSetBottleCount(cursor, reminder);
-
                     reminderSetBoxCount(cursor, reminder);
-
                     reminder.setDate(cursor.getString(cursor.getColumnIndex(Reminder.DATE)));
-
-                    reminder.setWineName(cursor.getString(cursor.getColumnIndex(Reminder.WINE_NAME)));        
-
+                    reminder.setWineName(cursor.getString(cursor.getColumnIndex(Reminder.WINE_NAME)));
                     reminder.setText(cursor.getString(cursor.getColumnIndex(Reminder.TEXT)));
-
                     reminderList.add(reminder);
-
                 } while (cursor.moveToNext());
             }
             cursor.close();

@@ -26,22 +26,16 @@ public class WineInStockRepo {
 
 
     public   int insert ( WineInStock wineInStock ){
-
         int wineInStockId;
-
         SQLiteDatabase db = DatabaseManager.getInstance().openDatabase();
         ContentValues values = new ContentValues();
-
         values.put(WineInStock.TOTAL, wineInStock.getTotal());
         values.put(WineInStock.INBOX, wineInStock.getInbox());
-
         values.put(WineInStock.BOTTLE, wineInStock.getBottle());
 
         //Inserting Row
         wineInStockId = (int)db.insert(WineInStock.TABLE, null, values);
-
         DatabaseManager.getInstance().closeDatabase();
-
         return wineInStockId;
     }
 
@@ -73,15 +67,14 @@ public class WineInStockRepo {
             SQLiteDatabase db = DatabaseManager.getInstance().openDatabase();
 
             String selectQuery =  " SELECT "
-
                     + WineInStock.TABLE + "." + WineInStock.TOTAL  + ", "
                     + WineInStock.TABLE + "." + WineInStock.INBOX  + ", "
                     + WineInStock.TABLE + "." + WineInStock.BOTTLE
-
                     + " FROM " +	WineInStock.TABLE
                     ;
 
             Cursor cursor = db.rawQuery(selectQuery, null);
+
             // looping through all rows and adding to list
             if (cursor.moveToFirst()) {
                 do {

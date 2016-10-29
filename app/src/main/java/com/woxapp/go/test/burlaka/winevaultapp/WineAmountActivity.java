@@ -1,7 +1,6 @@
 package com.woxapp.go.test.burlaka.winevaultapp;
 
 import android.app.LoaderManager;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -25,7 +24,7 @@ import com.woxapp.go.test.burlaka.winevaultapp.ui.UpdateUITurnover;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WineAmountActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>, UpdateUIInterface {
+public class WineAmountActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String>, UpdateUIInterface {
     
     private static final String TAG = "myTag";
     private RecyclerView rvReminder;
@@ -51,13 +50,11 @@ public class WineAmountActivity extends AppCompatActivity implements LoaderManag
         countBox = (TextView)findViewById(R.id.text_amount_box);
 
         getLoaderManager().initLoader(R.id.get_dashboard_loader, Bundle.EMPTY, this);
-
         onCreateUI();
     }
 
 
     private void onCreateUI() {
-
         List <Reminder> reminders = new ArrayList<>();
         List <Turnover> turnovers = new ArrayList<>();
 
@@ -85,7 +82,7 @@ public class WineAmountActivity extends AppCompatActivity implements LoaderManag
 
 
     @Override
-    public android.content.Loader<Cursor> onCreateLoader(int id, Bundle bundle) {
+    public android.content.Loader<String> onCreateLoader(int id, Bundle bundle) {
         switch (id) {
             case R.id.get_dashboard_loader:
                 return new GDBLoader(this);
@@ -96,7 +93,7 @@ public class WineAmountActivity extends AppCompatActivity implements LoaderManag
 
 
     @Override
-    public void onLoadFinished(android.content.Loader<Cursor> loader, Cursor cursor) {
+    public void onLoadFinished(android.content.Loader<String> loader, String result) {
         switch ( loader.getId()) {
             case R.id.get_dashboard_loader:
                 onFinishLoader();
@@ -106,12 +103,9 @@ public class WineAmountActivity extends AppCompatActivity implements LoaderManag
 
 
     private void onFinishLoader() {
-
         Log.i(TAG, "<==== update ui =====>");
-
         new UpdateUIReminder(this).execute();
         new UpdateUITurnover(this).execute();
-
     }
 
 
@@ -140,9 +134,8 @@ public class WineAmountActivity extends AppCompatActivity implements LoaderManag
 
     
     @Override
-    public void onLoaderReset(android.content.Loader<Cursor> loader) {
+    public void onLoaderReset(android.content.Loader<String> loader) {
     }
-
 
     public void onAddNewWine(View view){
         Toast.makeText(WineAmountActivity.this, "Add new wine", Toast.LENGTH_SHORT).show();
@@ -172,5 +165,4 @@ public class WineAmountActivity extends AppCompatActivity implements LoaderManag
     public void onNewsClick(View view){
         Toast.makeText(WineAmountActivity.this, "News", Toast.LENGTH_SHORT).show();
     }
-
 }

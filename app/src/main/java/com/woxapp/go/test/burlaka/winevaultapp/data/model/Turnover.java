@@ -32,7 +32,6 @@ public class Turnover implements Model {
 
     
     public Turnover(){
-
         this.id =0;
         this.canary_id  =0;
 

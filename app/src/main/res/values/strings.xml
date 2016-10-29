@@ -42,4 +42,8 @@
     <string name="news">НОВОСТИ</string>
     <string name="dash">ДАШБОРД</string>
     <string name="dashboard_name">ДАШБОРД</string>
+    <string name="name">Винный погреб</string>
+    <string name="login">Логин</string>
+    <string name="pass">Пароль</string>
+    <string name="bad">Логин или пароль неверен</string>
 </resources>

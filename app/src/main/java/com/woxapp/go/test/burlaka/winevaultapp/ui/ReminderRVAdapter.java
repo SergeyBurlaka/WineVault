@@ -24,7 +24,7 @@ public class ReminderRVAdapter extends RecyclerView.Adapter<ReminderRVAdapter.Re
         this.reminders = reminders;
     }
 
-    
+
     public void swap(List<Reminder> datas){
         reminders.clear();
         reminders.addAll(datas);
@@ -45,10 +45,13 @@ public class ReminderRVAdapter extends RecyclerView.Adapter<ReminderRVAdapter.Re
 
         if(reminders.get(position).getBottleOrWine() == R.id.box){
                     holder.boxOrBottle.setBackgroundResource(R.mipmap.ic_box);
-                }else holder.boxOrBottle.setBackgroundResource( R.mipmap.ic_wine_bottle);
+                }else {
+            holder.boxOrBottle.setBackgroundResource( R.mipmap.ic_wine_bottle);}
 
         if (position==0){holder.relativeLayoutReminder.setBackgroundResource(R.drawable.frame_reminder_red);
-        }else holder.relativeLayoutReminder.setBackgroundResource(R.drawable.frame_reminder);
+        }else {
+            holder.relativeLayoutReminder.setBackgroundResource(R.drawable.frame_reminder);
+        }
 
         holder.textData.setText(reminders.get(position).getDate());
         holder.name_text.setText(reminders.get(position).getWineName());
@@ -62,8 +65,9 @@ public class ReminderRVAdapter extends RecyclerView.Adapter<ReminderRVAdapter.Re
         return reminders.size();
     }
 
-    
+
     public static class ReminderViewHolder extends RecyclerView.ViewHolder {
+
         TextView textData;
         TextView name_text;
         TextView info_text;
@@ -79,7 +83,6 @@ public class ReminderRVAdapter extends RecyclerView.Adapter<ReminderRVAdapter.Re
             info_text = (TextView)itemView.findViewById(R.id.secondary_text_in_r);
             amount_wine = (TextView)itemView.findViewById(R.id.text_amount_wine_r);
             relativeLayoutReminder = (RelativeLayout) itemView.findViewById(R.id.reminder_rl);
-
         }
     }
 

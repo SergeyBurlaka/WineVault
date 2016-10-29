@@ -8,8 +8,4 @@ public interface SignInReqPresenter {
     void onStop ();
     void onDestroy();
     void onStartRequest(String login, String pass, String imei);
-
-    //JsonObject createBody();
-    //JsonObject createBody (String login, String pass,);
-    //void makeAuthReq (JsonObject jsonReqBody);
 }

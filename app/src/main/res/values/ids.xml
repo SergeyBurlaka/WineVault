@@ -12,4 +12,5 @@
     <item name="get_bottle" type="id">1</item>
     <item name="DIALOG_VISIBLE" type="id">1</item>
     <item name="DIALOG_INVISIBLE" type="id">0</item>
+    <item name="fail" type="id">fail</item>
 </resources>

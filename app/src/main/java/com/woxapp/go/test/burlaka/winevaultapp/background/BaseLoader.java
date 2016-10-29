@@ -2,7 +2,6 @@ package com.woxapp.go.test.burlaka.winevaultapp.background;
 
 import android.content.AsyncTaskLoader;
 import android.content.Context;
-import android.database.Cursor;
 
 import org.json.JSONException;
 
@@ -11,7 +10,7 @@ import java.io.IOException;
 /**
  * Created by Operator on 22.10.2016.
  */
-public abstract class BaseLoader extends AsyncTaskLoader<Cursor> {
+public abstract class BaseLoader extends AsyncTaskLoader<String> {
 
     private static final String TAG = "BaseLoaderTAG";
 
@@ -28,7 +27,7 @@ public abstract class BaseLoader extends AsyncTaskLoader<Cursor> {
 
 
     @Override
-    public Cursor loadInBackground() {
+    public String loadInBackground() {
         try {
             return apiCall();
         } catch (IOException e) {
@@ -43,6 +42,6 @@ public abstract class BaseLoader extends AsyncTaskLoader<Cursor> {
     }
 
 
-    protected abstract Cursor apiCall() throws IOException, JSONException;
+    protected abstract String apiCall() throws IOException, JSONException;
 }
 

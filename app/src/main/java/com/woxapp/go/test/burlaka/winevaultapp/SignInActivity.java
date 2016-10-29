@@ -33,25 +33,17 @@ public class SignInActivity extends AppCompatActivity implements SignInView {
     private ProgressBar pdialog;
     private SignInReqPresenter authReq;
     private String login, pass;
-    private TextView editPassText;
-    private TextView editLoginText;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
-
-
         myLoginEdit = (EditText)findViewById(R.id.edit_login);
         myPassEdit = (EditText) findViewById(R.id.edit_pass);
-
         pdialog = (ProgressBar) findViewById(R.id.progress_bar);
         badNews = (TextView) findViewById(R.id.text_bad_answer);
-
         authReq = new SignInReq(this);
-
-
 
         signIn = (Button)findViewById(R.id.button_enter);
         signIn.setOnClickListener(new View.OnClickListener() {
@@ -73,8 +65,6 @@ public class SignInActivity extends AppCompatActivity implements SignInView {
             }
         });
     }
-
-
 
 
     private void onStartAuthReq() {
@@ -106,9 +96,7 @@ public class SignInActivity extends AppCompatActivity implements SignInView {
             case PERMISSION_READ_STATE: {
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
                     authReq.onStartRequest( login, pass, ask_imei());
-                   // get_imei();
                     // permission granted!
                     // you may now do the action that requires this permission
                 } else {
@@ -131,22 +119,18 @@ public class SignInActivity extends AppCompatActivity implements SignInView {
    }
 
 
-
     @Override
     protected void onStart() {
         super.onStart();
         authReq.onStart();
-
     }
 
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        //activityLive = false;
         authReq.onDestroy();
     }
-
 
     /*
     *   Implements SignInView
@@ -163,18 +147,17 @@ public class SignInActivity extends AppCompatActivity implements SignInView {
         }
     }
 
+
     @Override
     public void showBadAnswer() {
         badNews.setVisibility(View.VISIBLE);
     }
 
+
     @Override
     public void goNextView() {
-
             Intent goVault = new Intent(SignInActivity.this, WineAmountActivity.class);
             startActivity( goVault);
             finish();
-
     }
 }
-

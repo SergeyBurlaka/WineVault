@@ -15,10 +15,12 @@ import com.woxapp.go.test.burlaka.winevaultapp.App;
  * Created by Operator on 22.10.2016.
  */
 public class DBHelper extends SQLiteOpenHelper {
+
     //version number to upgrade database version
     //each time if you Add, Edit table, you need to change the
     //version number.
     private static final int DATABASE_VERSION =17;
+
     // Database Name
     private static final String DATABASE_NAME = "sqliteDBMultiTbl.db";
     private static final String TAG = DBHelper.class.getSimpleName().toString();
@@ -36,6 +38,7 @@ public class DBHelper extends SQLiteOpenHelper {
         reminderlRepo = new ReminderRepo();
         turnoverRepo = new TurnoverRepo();
         wineInStockRepo = new WineInStockRepo();
+
         //All necessary tables you like to create will create here
         db.execSQL(reminderlRepo.createTable());
         db.execSQL(turnoverRepo.createTable());

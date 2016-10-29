@@ -16,12 +16,13 @@ import java.util.List;
  */
 public class TurnoverRVAdapter extends RecyclerView.Adapter <TurnoverRVAdapter.TurnoverViewHolder>{
 
-    private static final String TAG = "myTag";
     List<Turnover> turnover;
+
 
     public TurnoverRVAdapter(List<Turnover> turnover){
         this.turnover = turnover;
     }
+
 
     public void swap(List<Turnover> datas){
        turnover.clear();
@@ -40,7 +41,6 @@ public class TurnoverRVAdapter extends RecyclerView.Adapter <TurnoverRVAdapter.T
 
     @Override
     public void onBindViewHolder(TurnoverViewHolder holder, int position) {
-
         if(turnover.get(position).getStatus_id() == 0) {
 
     //On lost wine data
@@ -64,11 +64,8 @@ public class TurnoverRVAdapter extends RecyclerView.Adapter <TurnoverRVAdapter.T
         holder.card_gwine.setVisibility(View.VISIBLE);
         holder.data_gwine.setText(turnover.get(position).getDate());
         holder.text_gwine.setText(turnover.get(position).getWineName());
-
         holderBoxGW(holder, position);
         holderBottleGW(holder, position);
-
-
     }
 
 
@@ -78,7 +75,6 @@ public class TurnoverRVAdapter extends RecyclerView.Adapter <TurnoverRVAdapter.T
         }else {
             holder.wine_gwine.setText("+" + Integer.toString(turnover.get(position).getBottleCount()));
         }
-
     }
 
 
@@ -97,15 +93,13 @@ public class TurnoverRVAdapter extends RecyclerView.Adapter <TurnoverRVAdapter.T
         }else{
             holder.wine_lwine.setText("-"+Integer.toString(turnover.get(position).getBottleCount()));
         }
-
     }
+
 
     private void holderBoxLW(TurnoverViewHolder holder, int position) {
         if (turnover.get(position).getBoxCount()==0){
             holder.box_lwine.setText ("нет");
-
         }else{
-
             holder.box_lwine.setText("-"+Integer.toString(turnover.get(position).getBoxCount()));
         }
     }
@@ -130,10 +124,8 @@ public class TurnoverRVAdapter extends RecyclerView.Adapter <TurnoverRVAdapter.T
             super(itemView);
             //get wine card
             card_gwine =  itemView.findViewById(R.id.get_wine_fragment );
-
             bottle_gview = card_gwine.findViewById(R.id.view_bottle);
             box_gview = card_gwine.findViewById(R.id.view_box);
-
             text_gwine = (TextView) card_gwine.findViewById( R.id.info_text);
             wine_gwine = (TextView) card_gwine.findViewById(R.id.amount_wine_text);
             box_gwine = (TextView) card_gwine.findViewById(R.id.amount_box_text);
@@ -141,16 +133,15 @@ public class TurnoverRVAdapter extends RecyclerView.Adapter <TurnoverRVAdapter.T
 
             //lost wine card
             card_lwine =  itemView.findViewById(R.id.lost_wine_fragment );
-
             bottle_lview = card_lwine.findViewById(R.id.view_bottle);
             box_lview = card_lwine.findViewById(R.id.view_box);
-
             text_lwine = (TextView) card_lwine.findViewById( R.id.info_text);
             wine_lwine = (TextView) card_lwine.findViewById(R.id.amount_wine_text);
             box_lwine = (TextView) card_lwine.findViewById(R.id.amount_box_text);
             data_lwine = (TextView) card_lwine.findViewById(R.id.data_text);
         }
     }
+
 
     @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {

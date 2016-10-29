@@ -21,21 +21,16 @@ public class TurnoverRepo {
 
     public  String createTable (){
         return "CREATE TABLE " + Turnover.TABLE + "("+
-            
                 Turnover.KEY_ID + " INTEGER PRIMARY KEY, "+
                 Turnover.CANARY_ID + " INTEGER, " +
-
                 Turnover.DATE + " TEXT, " +
                 Turnover.WINE_NAME + " TEXT, " +
-
                 Turnover.BOX_COUNT + " INTEGER, " +
                 Turnover.BOTTLE_COUNT + " INTEGER, " +
-
                 Turnover.STATUS_ID + " INTEGER);";
     }
 
 
-    
     public  void insert ( List<Turnover> turnovers ){
         for( Turnover turnover : turnovers){
             insert (turnover);
@@ -44,29 +39,20 @@ public class TurnoverRepo {
 
     
     public   int insert ( Turnover turnover ){
-
         int turnoverId;
-
         SQLiteDatabase db = DatabaseManager.getInstance().openDatabase();
         ContentValues values = new ContentValues();
-
         values.put(Turnover.KEY_ID, turnover.getId());
         values.put(Turnover.CANARY_ID, turnover.getCanary_id());
-
         values.put(Turnover.DATE, turnover.getDate());
         values.put(Turnover.WINE_NAME, turnover.getWineName());
-
         values.put(Turnover.BOX_COUNT, turnover.getBoxCount());
-
         values.put(Turnover.BOTTLE_COUNT, turnover.getBottleCount());
-
         values.put(Turnover.STATUS_ID, turnover.getStatus_id());
 
         //Inserting Row
         turnoverId = (int)db.insert(Turnover.TABLE, null, values);
-
         DatabaseManager.getInstance().closeDatabase();
-
         return turnoverId;
     }
 
@@ -92,23 +78,17 @@ public class TurnoverRepo {
 
     
     public List<Turnover> getTurnoverList (){
-
         List<Turnover> turnovers = new ArrayList<>();
         Turnover turnover;// = new Turnover ();
-
         try{
             SQLiteDatabase db = DatabaseManager.getInstance().openDatabase();
 
             String selectQuery =  " SELECT "
-
                     + Turnover.TABLE + "." + Turnover.BOTTLE_COUNT + ", "
                     + Turnover.TABLE + "." + Turnover.BOX_COUNT + ", "
-
                     + Turnover.TABLE + "." + Turnover.DATE + ", "
                     + Turnover.TABLE + "." + Turnover.WINE_NAME + ", "
-
                     + Turnover.TABLE + "." + Turnover.STATUS_ID
-
                     + " FROM " +	Turnover.TABLE
                     ;
 
@@ -119,23 +99,17 @@ public class TurnoverRepo {
             if (cursor.moveToFirst()) {
                 do {
                     turnover = new Turnover ();
-                    
                     turnover.setBottle_count(cursor.getString(cursor.getColumnIndex(Turnover.BOTTLE_COUNT)));
                     turnover.setBox_count(cursor.getString(cursor.getColumnIndex(Turnover.BOX_COUNT)));
-
                     turnover.setDate(cursor.getString(cursor.getColumnIndex(Turnover.DATE)));
                     turnover.setWineName(cursor.getString(cursor.getColumnIndex(Turnover.WINE_NAME)));
-
                     turnover.setStatus_id(cursor.getString(cursor.getColumnIndex(Turnover.STATUS_ID)));
-
                     turnovers.add(turnover);
-
                 } while (cursor.moveToNext());
             }
             cursor.close();
 
             DatabaseManager.getInstance().closeDatabase();
-
         } catch (SQLiteException e) {
             // database doesn't exist yet.
             Log.e(TAG, "Exception on getReminderList = " + e);

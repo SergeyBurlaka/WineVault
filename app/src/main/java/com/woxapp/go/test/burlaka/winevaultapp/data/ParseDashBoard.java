@@ -22,7 +22,6 @@ import java.util.List;
 public class ParseDashBoard {
 
     private static final String TAG ="myTag" ;
-
     private List <Reminder> reminders;
     private List <Turnover> turnovers;
     private WineInStock wineInStock;
@@ -39,24 +38,19 @@ public class ParseDashBoard {
 
     
     public ParseDashBoard(JSONObject jsonObject){
-
         this.answerDashBoardJSONObject = jsonObject;
-
         this.reminders = new ArrayList<>();
         this.turnovers = new ArrayList<>();
         this.wineInStock = new WineInStock();
-
         this.reminderRepo = new ReminderRepo();
         this.turnoverRepo = new TurnoverRepo();
         this.wineInStockRepo = new WineInStockRepo();
-
     }
 
     
     public void onParsingJSON()  {
        // Log.i(TAG, "1 step parse");
         try {
-
             reminderArrayJSON =  answerDashBoardJSONObject.getJSONArray("reminder");
             turnoverArrayJSON = answerDashBoardJSONObject.getJSONArray("turnover");
             wineInStokJSONObject = answerDashBoardJSONObject.getJSONObject("wineInStock");
@@ -64,12 +58,10 @@ public class ParseDashBoard {
             onParsingWineInStock(wineInStokJSONObject);
             onParsingReminderList(reminderArrayJSON);
             onParsingTurnoverList(turnoverArrayJSON);
-
         } catch (JSONException e) {
             e.printStackTrace();
             Log.i(TAG, "JSONException  onParsingTurnoverList");
         }
-
         onFinishParsingJSON ();
     }
 
@@ -85,10 +77,8 @@ public class ParseDashBoard {
         Reminder rm;
         
         for (int i = 0; i < reminderArray.length(); i++) {
-
             JSONObject jsonobject = reminderArray.getJSONObject(i);
             rm = new Reminder();
-            
             rm.setId(jsonobject.getString("id"));
             rm.setCanaryId(jsonobject.getString("canary_id"));
             rm.setDate(jsonobject.getString("date" ));
@@ -97,7 +87,6 @@ public class ParseDashBoard {
             rm.setBottleCount(jsonobject.getString("bottle_count"));
             rm.setText(jsonobject.getString("text"));
             rm.setReminderType(jsonobject.getString("ReminderType"));
-
             reminders.add(rm);
         }
     }
@@ -106,11 +95,9 @@ public class ParseDashBoard {
 
         Turnover tm;
 
-        for (int i = 0; i < reminderArrayJSON.length(); i++) {  
-            
+        for (int i = 0; i < reminderArrayJSON.length(); i++) {
             JSONObject turnoverJSON = turnoverArray.getJSONObject(i);
             tm = new Turnover();
-
             tm.setId(turnoverJSON.getString("id"));
             tm.setCanary_id(turnoverJSON.getString("canary_id"));
             tm.setBox_count(turnoverJSON.getString("box_count"));
@@ -118,7 +105,6 @@ public class ParseDashBoard {
             tm.setDate(turnoverJSON.getString("date"));
             tm.setWineName(turnoverJSON.getString("wineName"));
             tm.setStatus_id(turnoverJSON.getString("status_id"));
-
             turnovers.add(tm);
         }
     }

@@ -37,16 +37,12 @@ public class SignInReq implements Callback<ResponseBody>, SignInReqPresenter {
 
     private void makeAuthReq(JsonObject jsonReqBody) {
         SignInService service = ApiFactory.getSignInService();
-
         Call<ResponseBody> call = service.signIn(jsonReqBody);
         call.enqueue(this);
     }
 
 
     private JsonObject createBody (String login, String pass, String imei) {
-
-      //  String imei = signInView.get_imei();
-
         JsonObject bodyReg = new JsonObject();
         bodyReg.addProperty("login", login);
         bodyReg.addProperty("password", pass);
@@ -62,18 +58,14 @@ public class SignInReq implements Callback<ResponseBody>, SignInReqPresenter {
 
     @Override
     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-
         signInView.progressDialog (R.id.DIALOG_INVISIBLE);
-
 
         if (response.isSuccessful()) {
             try {
-
                 Log.i(TAG, "Response is successful! "+response.body().toString());
-                //cheers!
+
                 //save utility cash in singleton
                 InternetUser iu = InternetUser.getInstance();
-                //iu.setImei("12345");
                 iu.setImei(imei);
                 iu.setJsonAccess(response.body().string());
                 signInView.goNextView();
@@ -81,13 +73,10 @@ public class SignInReq implements Callback<ResponseBody>, SignInReqPresenter {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
             call.toString();
-
         }else
         {
             signInView.showBadAnswer();
-
             Log.i(TAG, "NULL BODY -> " + response.errorBody());
         }
     }
@@ -96,7 +85,6 @@ public class SignInReq implements Callback<ResponseBody>, SignInReqPresenter {
     @Override
     public void onFailure(Call<ResponseBody> call, Throwable t) {
         signInView.showBadAnswer();
-
         Log.e(TAG,"Failed");
         Log.e(TAG," "+t.getMessage());
     }
@@ -104,14 +92,11 @@ public class SignInReq implements Callback<ResponseBody>, SignInReqPresenter {
 
     @Override
     public void onStart() {
-
     }
 
     @Override
     public void onStop() {
-
     }
-
 
     @Override
     public void onDestroy() {
