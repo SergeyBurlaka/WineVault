@@ -84,6 +84,7 @@ public class TurnoverRepo {
             SQLiteDatabase db = DatabaseManager.getInstance().openDatabase();
 
             String selectQuery =  " SELECT "
+                    + Turnover.TABLE +  "." + Turnover.KEY_ID + ", "
                     + Turnover.TABLE + "." + Turnover.BOTTLE_COUNT + ", "
                     + Turnover.TABLE + "." + Turnover.BOX_COUNT + ", "
                     + Turnover.TABLE + "." + Turnover.DATE + ", "
@@ -99,11 +100,12 @@ public class TurnoverRepo {
             if (cursor.moveToFirst()) {
                 do {
                     turnover = new Turnover ();
-                    turnover.setBottle_count(cursor.getString(cursor.getColumnIndex(Turnover.BOTTLE_COUNT)));
-                    turnover.setBox_count(cursor.getString(cursor.getColumnIndex(Turnover.BOX_COUNT)));
+                    turnover.setId(cursor.getInt(cursor.getColumnIndex(Turnover.KEY_ID)));
+                    turnover.setBottle_count(cursor.getInt(cursor.getColumnIndex(Turnover.BOTTLE_COUNT)));
+                    turnover.setBox_count(cursor.getInt(cursor.getColumnIndex(Turnover.BOX_COUNT)));
                     turnover.setDate(cursor.getString(cursor.getColumnIndex(Turnover.DATE)));
                     turnover.setWineName(cursor.getString(cursor.getColumnIndex(Turnover.WINE_NAME)));
-                    turnover.setStatus_id(cursor.getString(cursor.getColumnIndex(Turnover.STATUS_ID)));
+                    turnover.setStatus_id(cursor.getInt(cursor.getColumnIndex(Turnover.STATUS_ID)));
                     turnovers.add(turnover);
                 } while (cursor.moveToNext());
             }

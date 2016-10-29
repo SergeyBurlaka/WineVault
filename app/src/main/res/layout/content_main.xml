@@ -25,13 +25,13 @@
             android:layout_weight="100"
             android:layout_height="match_parent">
 
-            <include layout="@layout/board_amount_layout"/>
+            <include layout="@layout/board_amount_layout" />
 
-            <include layout="@layout/board_reminder_layout"/>
+            <include layout="@layout/board_reminder_layout" />
 
         </LinearLayout>
 
-        <include layout="@layout/board_turnover_layout"/>
+        <include layout="@layout/board_turnover_layout" />
 
    </LinearLayout>
 

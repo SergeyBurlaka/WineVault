@@ -1,9 +1,11 @@
 package com.woxapp.go.test.burlaka.winevaultapp.ui;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.woxapp.go.test.burlaka.winevaultapp.R;
@@ -16,6 +18,7 @@ import java.util.List;
  */
 public class TurnoverRVAdapter extends RecyclerView.Adapter <TurnoverRVAdapter.TurnoverViewHolder>{
 
+    private static final String TAG = "myTag";
     List<Turnover> turnover;
 
 
@@ -41,6 +44,9 @@ public class TurnoverRVAdapter extends RecyclerView.Adapter <TurnoverRVAdapter.T
 
     @Override
     public void onBindViewHolder(TurnoverViewHolder holder, int position) {
+
+        Log.i(TAG, "Turnover id = "+turnover.get(position).getId());
+
         if(turnover.get(position).getStatus_id() == 0) {
 
     //On lost wine data
@@ -71,8 +77,12 @@ public class TurnoverRVAdapter extends RecyclerView.Adapter <TurnoverRVAdapter.T
 
     private void holderBottleGW(TurnoverViewHolder holder, int position) {
         if (turnover.get(position).getBottleCount()==0){
-            holder.wine_gwine.setText ("нет");
+            holder.wine_gwine.setText ("");
+            holder.img_bottle_gwine.setVisibility(View.INVISIBLE);
+            holder.bottle_gview.setVisibility(View.INVISIBLE);
         }else {
+            holder.img_bottle_gwine.setVisibility(View.VISIBLE);
+            holder.bottle_gview.setVisibility(View.VISIBLE);
             holder.wine_gwine.setText("+" + Integer.toString(turnover.get(position).getBottleCount()));
         }
     }
@@ -80,8 +90,12 @@ public class TurnoverRVAdapter extends RecyclerView.Adapter <TurnoverRVAdapter.T
 
     private void holderBoxGW(TurnoverViewHolder holder, int position) {
         if (turnover.get(position).getBoxCount()==0){
-            holder.box_gwine.setText ("нет");
+            holder.box_gwine.setText ("");
+            holder.img_box_gwine.setVisibility(View.INVISIBLE);
+            holder.box_gview.setVisibility(View.INVISIBLE);
         }else{
+            holder.box_gview.setVisibility(View.VISIBLE);
+            holder.box_gview.setVisibility(View.VISIBLE);
             holder.box_gwine.setText("+"+Integer.toString(turnover.get(position).getBoxCount()));
         }
     }
@@ -89,8 +103,12 @@ public class TurnoverRVAdapter extends RecyclerView.Adapter <TurnoverRVAdapter.T
 
     private void holderBottleLW(TurnoverViewHolder holder, int position) {
         if (turnover.get(position).getBottleCount()==0){
-            holder.wine_lwine.setText ("нет");
+            holder.wine_lwine.setText ("");
+            holder.img_bottle_lwine.setVisibility(View.INVISIBLE);
+            holder.bottle_lview.setVisibility(View.INVISIBLE);
         }else{
+            holder.img_bottle_lwine.setVisibility(View.VISIBLE);
+            holder.bottle_lview.setVisibility(View.VISIBLE);
             holder.wine_lwine.setText("-"+Integer.toString(turnover.get(position).getBottleCount()));
         }
     }
@@ -98,8 +116,12 @@ public class TurnoverRVAdapter extends RecyclerView.Adapter <TurnoverRVAdapter.T
 
     private void holderBoxLW(TurnoverViewHolder holder, int position) {
         if (turnover.get(position).getBoxCount()==0){
-            holder.box_lwine.setText ("нет");
+            holder.box_lwine.setText ("");
+            holder.img_box_lwine.setVisibility(View.INVISIBLE);
+            holder.box_lview.setVisibility(View.INVISIBLE);
         }else{
+            holder.img_box_lwine.setVisibility(View.VISIBLE);
+            holder.box_lview.setVisibility(View.VISIBLE);
             holder.box_lwine.setText("-"+Integer.toString(turnover.get(position).getBoxCount()));
         }
     }
@@ -112,33 +134,53 @@ public class TurnoverRVAdapter extends RecyclerView.Adapter <TurnoverRVAdapter.T
 
 
     public static class TurnoverViewHolder extends RecyclerView.ViewHolder {
-        //For lost wine cards
+
+    //For lost wine cards
         View card_gwine, bottle_gview, box_gview;;
         TextView text_gwine, wine_gwine, box_gwine, data_gwine;
+        ImageView img_bottle_gwine, img_box_gwine;
 
-        //For get wine cards
+    //For get wine cards
         View card_lwine, bottle_lview, box_lview;
         TextView text_lwine, wine_lwine, box_lwine, data_lwine;
+        ImageView img_bottle_lwine, img_box_lwine;
 
         TurnoverViewHolder(View itemView) {
             super(itemView);
-            //get wine card
+    //Get wine card
             card_gwine =  itemView.findViewById(R.id.get_wine_fragment );
+
+            //get view
             bottle_gview = card_gwine.findViewById(R.id.view_bottle);
             box_gview = card_gwine.findViewById(R.id.view_box);
+
+            //get text view
             text_gwine = (TextView) card_gwine.findViewById( R.id.info_text);
             wine_gwine = (TextView) card_gwine.findViewById(R.id.amount_wine_text);
             box_gwine = (TextView) card_gwine.findViewById(R.id.amount_box_text);
             data_gwine = (TextView) card_gwine.findViewById(R.id.data_text);
 
-            //lost wine card
+            //get image view
+            img_bottle_gwine = (ImageView) card_gwine.findViewById(R.id.image_wine);
+            img_box_gwine = (ImageView) card_gwine.findViewById(R.id.image_box_l);
+
+    //Lost wine card
             card_lwine =  itemView.findViewById(R.id.lost_wine_fragment );
+
+            //get view
             bottle_lview = card_lwine.findViewById(R.id.view_bottle);
             box_lview = card_lwine.findViewById(R.id.view_box);
+
+            //get text view
             text_lwine = (TextView) card_lwine.findViewById( R.id.info_text);
             wine_lwine = (TextView) card_lwine.findViewById(R.id.amount_wine_text);
             box_lwine = (TextView) card_lwine.findViewById(R.id.amount_box_text);
             data_lwine = (TextView) card_lwine.findViewById(R.id.data_text);
+
+            //get image view
+            img_bottle_lwine = (ImageView) card_lwine.findViewById(R.id.image_wine);
+            img_box_lwine = (ImageView) card_lwine.findViewById(R.id.image_box_l);
+
         }
     }
 
