@@ -10,12 +10,12 @@
         android:layout_width="match_parent"
         android:layout_height="115dp"
         android:layout_gravity="center"
-        android:layout_margin="@dimen/card_margin"
+        android:layout_margin="12dp"
         android:elevation="3dp"
         card_view:cardCornerRadius="@dimen/card_album_radius">
 
         <RelativeLayout
-            android:background="@color/background_color_white"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
@@ -58,73 +58,74 @@
 
 
             <View
-                android:layout_marginTop="36.5dp"
-                android:layout_marginBottom="5dp"
                 android:layout_width="95dp"
                 android:layout_height="40dp"
-                android:background="@color/background_light"
-                android:layout_alignParentBottom="true"
-
-                android:id="@+id/colored_bar" />
+                android:background="@drawable/rectangles_card_turnover"
+                android:id="@+id/colored_bar"
+                android:layout_alignTop="@+id/colored_bar_next"
+                android:layout_alignLeft="@+id/info_text"
+                android:layout_alignStart="@+id/info_text" />
 
 
             <ImageView
-                android:layout_marginLeft="7dp"
-                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="5dp"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:src="@mipmap/ic_box"
                 android:contentDescription="@string/box_ic_in_list"
+                android:id="@+id/image_box_l"
                 android:layout_alignBottom="@+id/colored_bar"
                 android:layout_alignLeft="@+id/colored_bar"
-                android:layout_alignStart="@+id/colored_bar"
-                android:id="@+id/image_box_l"/>
+                android:layout_alignStart="@+id/colored_bar" />
 
 
             <TextView
-                android:layout_marginLeft="55dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@android:style/TextAppearance.Medium"
                 android:text="@string/add_some"
                 android:textColor="@color/background_color_yellow"
-                android:layout_alignBottom="@+id/image_box_l"
-                android:id="@+id/amount_box_text" />
+                android:id="@+id/amount_box_text"
+                android:layout_alignTop="@+id/image_box_l"
+                android:layout_toRightOf="@+id/image_box_l"
+                android:layout_toEndOf="@+id/image_box_l" />
 
             <View
                 android:layout_marginTop="36.5dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_width="95dp"
                 android:layout_height="40dp"
-                android:background="@color/background_light"
+                android:background="@drawable/rectangles_card_turnover"
                 android:layout_alignParentBottom="true"
                 android:layout_toRightOf="@+id/colored_bar"
                 android:id="@+id/colored_bar_next"/>
 
 
             <ImageView
-                android:layout_marginBottom="2.5dp"
                 android:layout_width="35dp"
                 android:layout_height="45dp"
                 android:src="@mipmap/ic_wine_bottle"
                 android:contentDescription="@string/wine_in_list"
                 android:id="@+id/image_wine"
-                android:layout_alignParentBottom="true"
+                android:layout_alignTop="@+id/colored_bar_next"
                 android:layout_alignLeft="@+id/colored_bar_next"
                 android:layout_alignStart="@+id/colored_bar_next" />
 
             <TextView
+                android:paddingBottom="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/background_color_yellow"
                 style="@android:style/TextAppearance.Medium"
                 android:text="@string/add_wine"
-                android:layout_alignBottom="@+id/image_box_l"
-                android:layout_toRightOf="@+id/image_wine"
-                android:layout_toEndOf="@+id/image_wine"
 
-                android:id="@+id/amount_wine_text"/>
+                android:id="@+id/amount_wine_text"
+                android:layout_alignTop="@+id/amount_box_text"
+                android:layout_toRightOf="@+id/image_wine"
+                android:layout_toEndOf="@+id/image_wine" />
 
         </RelativeLayout>
     </android.support.v7.widget.CardView>

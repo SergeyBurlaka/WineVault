@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:drawable="@drawable/circle_turnover"
+        android:height="22dp"
+        android:width="22dp"
+        android:gravity="center_horizontal"
+        android:top="15dp"/>
+
+    <item android:drawable="@drawable/circle_turnover"
+        android:height="22dp"
+        android:width="22dp"
+        android:gravity="center_horizontal"
+        android:top="200dp"/>
+
+    <item android:drawable="@drawable/circle_turnover"
+        android:height="20dp"
+        android:width="20dp"
+        android:gravity="center_horizontal"
+        android:top="375dp"/>
+
+    <item android:drawable="@drawable/circle_turnover"
+        android:height="20dp"
+        android:width="20dp"
+        android:gravity="center_horizontal"
+        android:top="550dp"/>
+
+    <item android:drawable="@drawable/circle_turnover"
+        android:height="20dp"
+        android:width="20dp"
+        android:gravity="center_horizontal"
+        android:top="725dp"/>
+
+    <item
+        android:top="15dp"
+        android:width="5dp"
+        android:drawable="@drawable/line_turnover"
+        android:gravity="center_horizontal" />
+
+
+</layer-list>

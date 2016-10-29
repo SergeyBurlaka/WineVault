@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.woxapp.go.test.burlaka.winevaultapp.R;
@@ -33,7 +34,7 @@ public class ReminderRVAdapter extends RecyclerView.Adapter<ReminderRVAdapter.Re
 
     @Override
     public ReminderViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_remind, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.board_reminder_card, parent, false);
         ReminderViewHolder pvh = new ReminderViewHolder(v);
         return pvh;
     }
@@ -41,9 +42,13 @@ public class ReminderRVAdapter extends RecyclerView.Adapter<ReminderRVAdapter.Re
 
     @Override
     public void onBindViewHolder(ReminderViewHolder holder, int position) {
-                if(reminders.get(position).getBottleOrWine() == R.id.box){
+
+        if(reminders.get(position).getBottleOrWine() == R.id.box){
                     holder.boxOrBottle.setBackgroundResource(R.mipmap.ic_box);
                 }else holder.boxOrBottle.setBackgroundResource( R.mipmap.ic_wine_bottle);
+
+        if (position==0){holder.relativeLayoutReminder.setBackgroundResource(R.drawable.line_frame_reminder_red );
+        }else holder.relativeLayoutReminder.setBackgroundResource(R.drawable.line_frame_reminder);
 
         holder.textData.setText(reminders.get(position).getDate());
         holder.name_text.setText(reminders.get(position).getWineName());
@@ -64,6 +69,7 @@ public class ReminderRVAdapter extends RecyclerView.Adapter<ReminderRVAdapter.Re
         TextView info_text;
         TextView amount_wine;
         ImageView boxOrBottle;
+        RelativeLayout relativeLayoutReminder;
 
         ReminderViewHolder(View itemView) {
             super(itemView);
@@ -72,6 +78,8 @@ public class ReminderRVAdapter extends RecyclerView.Adapter<ReminderRVAdapter.Re
             name_text = (TextView)itemView.findViewById(R.id.text_main_in_r);
             info_text = (TextView)itemView.findViewById(R.id.secondary_text_in_r);
             amount_wine = (TextView)itemView.findViewById(R.id.text_amount_wine_r);
+            relativeLayoutReminder = (RelativeLayout) itemView.findViewById(R.id.reminder_rl);
+
         }
     }
 

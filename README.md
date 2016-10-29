@@ -10,7 +10,7 @@
 
 ### test
 
-[my app working on-line ] (https://appetize.io/app/y1d7fn3kfa5pn3nvnkc3c8x95w?device=nexus9&scale=75&orientation=landscape&osVersion=7.0) 
+[my app working on-line ] (https://appetize.io/app/gnfwbeh5reh7pvaacx6aj3u6f4?device=nexus9&scale=75&orientation=landscape&osVersion=7.0&deviceColor=white) 
 
 ### download 
 
@@ -26,7 +26,7 @@ app-debag_v-4 version
 
 <img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/2016-10-24%2011-57-51%20Screenshot_1.jpg" > 
 
-<img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/onTabletV_4.jpg">
+<img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/onTablet_V-4.jpg">
 
 app-debag_v-3 version
 

@@ -32,7 +32,7 @@ public class TurnoverRVAdapter extends RecyclerView.Adapter <TurnoverRVAdapter.T
 
     @Override
     public TurnoverViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.turnover_card_layout, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.board_turnover_card, parent, false);
         TurnoverViewHolder pvh = new TurnoverViewHolder(v);
         return pvh;
     }

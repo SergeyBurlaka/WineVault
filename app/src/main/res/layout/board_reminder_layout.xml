@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/layout_bg_reminder_list"
+    android:background="@drawable/bg_reminder"
     android:layout_width="match_parent"
     android:layout_height="600dp"
     android:layout_weight="240"
@@ -8,7 +8,7 @@
 
     <TextView
         android:layout_marginTop="8.5dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="16.5dp"
         android:textColor="@color/background_color_white"
         style="@android:style/TextAppearance.Medium"
         android:layout_width="wrap_content"

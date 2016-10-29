@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/layout_bg_have_wine"
+    android:background="@drawable/bg_amount"
     android:layout_width="match_parent"
     android:layout_height="250dp"
     android:layout_weight="100"
     android:layout_marginBottom="@dimen/window_indent"
     android:id="@+id/wine_layout">
 
-    
+    <!---->
     <TextView
         android:layout_marginTop="8.5dp"
         android:layout_marginLeft="@dimen/header_indent_left"
@@ -38,7 +38,17 @@
         android:layout_centerVertical="true"
         android:textStyle="normal" />
 
-        
+        <View
+
+            android:layout_width="20dp"
+            android:layout_height="80dp"
+            android:background="@drawable/bg_accentuation_vertical"
+            android:id="@+id/line_vertical"
+            android:layout_alignBottom="@+id/image_wine"
+            android:layout_centerHorizontal="true" />
+
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,7 +57,7 @@
         android:textColor="@color/colorPrimaryDark"
         android:id="@+id/all_wine"
         android:layout_below="@+id/amount_all_wine"
-        android:layout_alignStart="@+id/amount_all_wine"
+        android:layout_alignLeft="@+id/amount_all_wine"
         android:textStyle="bold" />
 
         
@@ -58,7 +68,7 @@
             android:layout_height="30dp"
             android:id="@+id/image_box"
             android:layout_alignTop="@+id/amount_all_wine"
-            android:layout_toEndOf="@+id/amount_all_wine"
+            android:layout_toRightOf="@+id/amount_all_wine"
             android:contentDescription="@string/box_ic" />
 
        
@@ -84,7 +94,21 @@
             android:layout_alignBottom="@+id/image_wine"
             android:layout_toRightOf="@+id/image_wine"/>
 
+
+        <View
+
+            android:layout_width="95dp"
+            android:layout_height="10dp"
+            android:background="@drawable/bg_accuntuation_horizontal"
+
+            android:id="@+id/line_gorizontal"
+            android:layout_above="@+id/text_amount_wine_2"
+            android:layout_toRightOf="@+id/image_wine"
+            android:layout_toEndOf="@+id/image_wine" />
+
+
         <TextView
+            android:paddingLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimaryDark"

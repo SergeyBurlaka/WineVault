@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/layout_bg_accounting"
+    android:background="@drawable/bg_turnover"
     android:layout_width="255dp"
     android:layout_weight="130"
     android:layout_height="wrap_content"
