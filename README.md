@@ -26,7 +26,7 @@ app-debag_v-4 version
 
 <img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/2016-10-24%2011-57-51%20Screenshot_1.jpg" > 
 
-<img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/onTablet_V-4.jpg">
+<img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/onTablet_v-4.jpg">
 
 app-debag_v-3 version
 
