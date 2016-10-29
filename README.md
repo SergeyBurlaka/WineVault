@@ -24,9 +24,9 @@ quickly and easily move to [.../src/main/] (https://github.com/SergeyBurlaka/Win
 
 app-debag_v-4 version
 
-<img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/2016-10-24%2011-57-51%20Screenshot_1.jpg" > 
+<img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/Login_v_4.jpg" > 
 
-<img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/onTablet_v-4.jpg">
+<img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/Vault_v_4.jpg">
 
 app-debag_v-3 version
 
