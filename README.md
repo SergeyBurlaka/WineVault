@@ -22,14 +22,14 @@ quickly and easily move to [.../src/main/] (https://github.com/SergeyBurlaka/Win
 
 ### Screenshots
 
-app-debag_v-4 version
+ "wine_vault_v-2"
 
 <img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/WineVault_v4_login.jpg" > 
 
 <img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/WineVault_v4.jpg">
 
 
-app-debag_v-3 version
+ "wine_vault_v-1"
 
 <img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/2016-10-24%2014-40-04%20Screenshot_2.jpg" >
 
