@@ -4,17 +4,17 @@
 
 ### Note:
 
- 1) App correctly views only on tablets, such as nexus 9.
+ 1. App correctly views only on tablets, such as nexus 9.
  
- 2) In cause of failed sign in, just enter "q" in login without password, and sign in success.
+ 2. In cause of failed sign in, just enter "q" in login without password, and sign in success.
 
 ###  References
 
-download [APK from Github] (https://github.com/SergeyBurlaka/WineVault/blob/master/wine_vault_v-2.apk) 
+1. download [APK from Github] (https://github.com/SergeyBurlaka/WineVault/blob/master/wine_vault_v-2.apk) 
 
-[my app working on-line ] (https://appetize.io/app/719truq5739yceg3zfht7p04br?device=nexus9&scale=75&orientation=landscape&osVersion=7.0) 
+2. test [my app working on-line ] (https://appetize.io/app/719truq5739yceg3zfht7p04br?device=nexus9&scale=75&orientation=landscape&osVersion=7.0) 
 
-quickly and easily move to [.../src/main/] (https://github.com/SergeyBurlaka/WineVault/tree/master/app/src/main)
+3. quickly and easily move to [.../src/main/] (https://github.com/SergeyBurlaka/WineVault/tree/master/app/src/main)
 
 
 ### Screenshots
