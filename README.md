@@ -8,17 +8,14 @@
  
  2) In cause of failed sign in, just enter "q" in login without password, and sign in success.
 
-### Test it
+###  References
+
+download [APK from Github] (https://github.com/SergeyBurlaka/WineVault/blob/master/wine_vault_v-2.apk) 
 
 [my app working on-line ] (https://appetize.io/app/719truq5739yceg3zfht7p04br?device=nexus9&scale=75&orientation=landscape&osVersion=7.0) 
 
-### Download 
-
-[APK from Github] (https://github.com/SergeyBurlaka/WineVault/blob/master/app-debug_v-4.apk) 
-
-### Reference 
-
 quickly and easily move to [.../src/main/] (https://github.com/SergeyBurlaka/WineVault/tree/master/app/src/main)
+
 
 ### Screenshots
 
