@@ -17,17 +17,5 @@
 3. quickly and easily move to [.../src/main/] (https://github.com/SergeyBurlaka/WineVault/tree/master/app/src/main)
 
 
-### Screenshots
-
- "wine_vault_v-2"
-
-<img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/WineVault_v4_login.jpg" > 
-
-<img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/WineVault_v4.jpg">
-
-
- "wine_vault_v-1"
-
-<img src="https://github.com/SergeyBurlaka/WineVault/blob/master/img/2016-10-24%2014-40-04%20Screenshot_2.jpg" >
 
 
