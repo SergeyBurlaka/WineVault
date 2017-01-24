@@ -1,6 +1,5 @@
 # WineVault
-
- My test to mobile development company [WoxApp] (http://woxapp.com/). 
+Make consuming REST APIs with Retrofit 2 with asynchronous thread   via Loaders, saves data in SQLite.   
 
 ### Note:
 
